@@ -20,7 +20,7 @@ import time
 import threading
 
 # Define variables
-WEIGHT_PATH = "src/yolo/weight/10ep.pt"
+WEIGHT_PATH = "src/fs-racing-yolo/src/yolo/weight/10ep.pt"
 VERBOSE = False  # YOLO verbose (showing detection output)
 
 # Camera intrinsic parameters
