@@ -101,7 +101,7 @@ void coneReconstruction(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     }
     pub.publish(ret);
     marker_pub.publish(marker_array);
-    // std::cout<<marker_array.markers.size()<<"\n";
+    std::cout<<marker_array.markers.size()<<"\n";
 }
 
 
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "cone_detection");
     ros::NodeHandle nh;
-
+    std::cout<<"start cone detection...\n";
     ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/ground_segmentation/obstacle_cloud", 1, coneReconstruction);
 
     pub = nh.advertise<cone_detection::LabeledPointArray>("/cone_detection", 1);
