@@ -1,0 +1,13 @@
+\subsubsection usage Usage
+\verbatim
+<node name="camera_dynamic" pkg="camera_dynamic" type="camera_dynamic">
+  <param name="brightness" type="int" value="240" />
+  <param name="saturation" type="int" value="64" />
+  <param name="hue" type="int" value="0" />
+  <param name="white_balance_automatic" type="bool" value="True" />
+  <param name="gamma" type="int" value="100" />
+  <param name="gain" type="int" value="118" />
+  <param name="auto_exposure" type="int" value="3" />
+</node>
+\endverbatim
+

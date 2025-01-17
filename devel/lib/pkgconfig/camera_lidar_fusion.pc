@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/pkgconfig/camera_lidar_fusion.pc

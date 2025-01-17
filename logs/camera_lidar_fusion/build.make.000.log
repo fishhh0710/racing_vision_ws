@@ -1,0 +1,39 @@
+[35m[1mScanning dependencies of target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[35m[1mScanning dependencies of target camera_lidar_fusion[0m
+[  0%] Built target std_msgs_generate_messages_eus
+[ 11%] [32mBuilding CXX object CMakeFiles/camera_lidar_fusion.dir/src/camera_lidar_fusion.cpp.o[0m
+[ 11%] Built target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray
+[35m[1mScanning dependencies of target camera_lidar_fusion_generate_messages_py[0m
+[35m[1mScanning dependencies of target camera_lidar_fusion_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target camera_lidar_fusion_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target camera_lidar_fusion_generate_messages_eus[0m
+[35m[1mScanning dependencies of target camera_lidar_fusion_generate_messages_nodejs[0m
+[ 22%] [34m[1mGenerating Lisp code from camera_lidar_fusion/LabeledPointArray.msg[0m
+[ 33%] [34m[1mGenerating EusLisp code from camera_lidar_fusion/LabeledPointArray.msg[0m
+[ 44%] [34m[1mGenerating EusLisp manifest code for camera_lidar_fusion[0m
+[ 55%] [34m[1mGenerating C++ code from camera_lidar_fusion/LabeledPointArray.msg[0m
+[ 66%] [34m[1mGenerating Python from MSG camera_lidar_fusion/LabeledPointArray[0m
+[ 77%] [34m[1mGenerating Javascript code from camera_lidar_fusion/LabeledPointArray.msg[0m
+[ 77%] Built target camera_lidar_fusion_generate_messages_nodejs
+[ 77%] Built target camera_lidar_fusion_generate_messages_lisp
+[ 77%] Built target camera_lidar_fusion_generate_messages_cpp
+[ 88%] [34m[1mGenerating Python msg __init__.py for camera_lidar_fusion[0m
+[ 88%] Built target camera_lidar_fusion_generate_messages_py
+[ 88%] Built target camera_lidar_fusion_generate_messages_eus
+[35m[1mScanning dependencies of target camera_lidar_fusion_generate_messages[0m
+[ 88%] Built target camera_lidar_fusion_generate_messages
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:[m[K In function ‘[01m[Kvoid calculate_dis(const std::vector<std::tuple<double, double> >&, const std::vector<camp>&, int, int, int, double)[m[K’:
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:39:14:[m[K [01;35m[Kwarning: [m[Kstructured bindings only available with ‘[01m[K-std=c++17[m[K’ or ‘[01m[K-std=gnu++17[m[K’
+   39 |         auto [01;35m[K[[m[Klidar_x, lidar_y] = lidar[i];
+      |              [01;35m[K^[m[K
+[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/camera_lidar_fusion/camera_lidar_fusion[0m
+[100%] Built target camera_lidar_fusion

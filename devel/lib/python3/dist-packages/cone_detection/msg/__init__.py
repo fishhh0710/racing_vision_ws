@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/cone_detection/lib/python3/dist-packages/cone_detection/msg/__init__.py

@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/roseus/ros/camera_lidar_fusion/manifest.l

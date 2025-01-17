@@ -1,0 +1,11 @@
+Symlinking /home/dl/vision_ws/devel/share/camera_dynamic/docs/CameraConfig.wikidoc
+Symlinking /home/dl/vision_ws/devel/share/camera_dynamic/docs/CameraConfig.dox
+Symlinking /home/dl/vision_ws/devel/share/camera_dynamic/docs/CameraConfig-usage.dox
+Symlinking /home/dl/vision_ws/devel/share/camera_dynamic/cmake/camera_dynamicConfig-version.cmake
+Symlinking /home/dl/vision_ws/devel/share/camera_dynamic/cmake/camera_dynamicConfig.cmake
+Symlinking /home/dl/vision_ws/devel/include/camera_dynamic/CameraConfig.h
+Symlinking /home/dl/vision_ws/devel/lib/python3/dist-packages/camera_dynamic/__init__.py
+Symlinking /home/dl/vision_ws/devel/lib/python3/dist-packages/camera_dynamic/cfg/__init__.py
+Symlinking /home/dl/vision_ws/devel/lib/python3/dist-packages/camera_dynamic/cfg/CameraConfig.py
+Symlinking /home/dl/vision_ws/devel/lib/pkgconfig/camera_dynamic.pc
+Symlinking /home/dl/vision_ws/devel/lib/camera_dynamic/dynamic_reconfigure_node

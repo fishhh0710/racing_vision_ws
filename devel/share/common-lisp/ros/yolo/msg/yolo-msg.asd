@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/yolo/share/common-lisp/ros/yolo/msg/yolo-msg.asd

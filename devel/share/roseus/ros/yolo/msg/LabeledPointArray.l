@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/yolo/share/roseus/ros/yolo/msg/LabeledPointArray.l

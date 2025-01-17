@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/yolo/share/gennodejs/ros/yolo/msg/LabeledPointArray.js

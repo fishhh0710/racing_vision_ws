@@ -1,0 +1,17 @@
+[35m[1mScanning dependencies of target cone_marker[0m
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  9%] Built target std_msgs_generate_messages_lisp
+[ 18%] Built target tf_broadcaster
+[ 27%] [32mBuilding CXX object CMakeFiles/cone_marker.dir/src/cone_marker.cpp.o[0m
+[ 27%] Built target _yolo_generate_messages_check_deps_LabeledPointArray
+[ 54%] Built target yolo_generate_messages_lisp
+[ 72%] Built target yolo_generate_messages_eus
+[ 72%] Built target yolo_generate_messages_nodejs
+[ 81%] Built target yolo_generate_messages_py
+[ 90%] Built target yolo_generate_messages_cpp
+[ 90%] Built target yolo_generate_messages
+[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/yolo/lib/yolo/cone_marker[0m
+[100%] Built target cone_marker

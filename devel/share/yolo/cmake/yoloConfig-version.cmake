@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/yolo/share/yolo/cmake/yoloConfig-version.cmake

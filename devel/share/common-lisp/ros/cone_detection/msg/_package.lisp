@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/cone_detection/share/common-lisp/ros/cone_detection/msg/_package.lisp

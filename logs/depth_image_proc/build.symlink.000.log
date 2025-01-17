@@ -1,0 +1,4 @@
+Symlinking /home/dl/vision_ws/devel/share/depth_image_proc/cmake/depth_image_procConfig-version.cmake
+Symlinking /home/dl/vision_ws/devel/share/depth_image_proc/cmake/depth_image_procConfig.cmake
+Symlinking /home/dl/vision_ws/devel/lib/libdepth_image_proc.so
+Symlinking /home/dl/vision_ws/devel/lib/pkgconfig/depth_image_proc.pc

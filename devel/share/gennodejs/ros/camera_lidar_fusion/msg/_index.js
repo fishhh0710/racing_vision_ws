@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/_index.js

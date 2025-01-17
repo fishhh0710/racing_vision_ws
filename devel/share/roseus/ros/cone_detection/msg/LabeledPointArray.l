@@ -1,0 +1,1 @@
+/home/dl/vision_ws/devel/.private/cone_detection/share/roseus/ros/cone_detection/msg/LabeledPointArray.l
