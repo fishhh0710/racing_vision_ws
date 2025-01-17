@@ -1,0 +1,26 @@
+image_width: 1440
+image_height: 1080
+camera_name: matlab1
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1269.7,    0. ,  752.8243,
+            0. , 1270.5,  522.5049,
+            0. ,    0. ,    1.    ]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 3
+  data: [-0.394496912610303,	0.244565154363864,	-0.118233119113776]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [1099.25879,    0.     ,  764.15313,    0.     ,
+            0.     , 1176.88194,  513.8594 ,    0.     ,
+            0.     ,    0.     ,    1.     ,    0.     ]
