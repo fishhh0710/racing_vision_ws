@@ -12,5 +12,6 @@
         "/opt/ros/noetic/lib/python3/dist-packages",
         "/home/dl/Desktop/FS-Racing-YOLO/devel/lib/python3/dist-packages",
         "/home/dl/Desktop/ft-fsd-path-planning"
-    ]
+    ],
+    "cmake.ignoreCMakeListsMissing": true
 }
