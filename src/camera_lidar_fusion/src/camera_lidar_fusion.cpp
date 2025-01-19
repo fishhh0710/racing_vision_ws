@@ -74,7 +74,7 @@ void calculate_dis() {
     matched_pts.clear();
     int now = 0;
     for(auto i:cam_points){
-        double min_dis = 0.25; //max error 0.5m
+        double min_dis = 1; //max error 0.5m
         std::pair<double,double> now_ds = {-1,-1};
         for(auto j:lidar_points){
             if(min_dis>dis(i.F,j)){
