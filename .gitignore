@@ -2,3 +2,6 @@ bag_file/2025-01-14-14-11-11.bag
 bag_file/2025-01-14-14-11-33.bag
 bag_file/2025-01-14-15-17-15.bag
 bag_file
+.gitignore
+.vscode
+
