@@ -1,7 +1,9 @@
+rosrun cone_detection downsampling ok
+rosrun cone_detection cone_legality_verification ok
+source src/fs-racing-yolo/run_yolo.sh ok
+rosrun yolo yolo-trans_3D_to_2D.py ok
 rosbag play -l bag_file/2025-01-14-14-11-11.bag
-rosrun cone_detection downsampling
 roslaunch linefit_ground_segmentation_ros segmentation.launch
-rosrun cone_detection cone_legality_verification 
-source src/fs-racing-yolo/run_yolo.sh
-rosrun yolo yolo-trans_3D_to_2D.py
+roslaunch cone_detection downsampling_legality.launch
+roslaunch yolo yolo.launch
 rosrun camera_lidar_fusion camera_lidar_fusion

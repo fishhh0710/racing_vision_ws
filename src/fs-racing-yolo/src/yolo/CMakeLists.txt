@@ -201,9 +201,13 @@ target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 add_executable(cone_marker src/cone_marker.cpp)
 target_link_libraries(cone_marker ${catkin_LIBRARIES})
 
-catkin_install_python(PROGRAMS src/yolo-trans_3D_to_2D.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# catkin_install_python(PROGRAMS src/LTS_v2.py
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
+
+# catkin_install_python(PROGRAMS src/yolo-trans_3D_to_2D.py
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 #############
 ## Testing ##

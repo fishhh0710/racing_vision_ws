@@ -1,7 +1,0 @@
-<launch>
-    <node pkg="yolo" type="tf_broadcaster" name="tf_broadcaster"
-        args="0 0 1.18 -90 0 0 map tiscamera 10"/> 
-    <node pkg="yolo" type="cone_marker" name="cone_marker"/>
-    <!--rviz-->
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find yolo)/rviz/gui.rviz"/>
-</launch>

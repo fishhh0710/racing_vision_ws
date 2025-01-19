@@ -18,8 +18,10 @@ from threading import Thread
 import sys
 import time
 import threading
+import os
 
 # Define variables
+cur = os.path.dirname(os.path.abspath(__file__))
 WEIGHT_PATH = "src/fs-racing-yolo/src/yolo/weight/10ep.pt"
 VERBOSE = False  # YOLO verbose (showing detection output)
 

@@ -18,6 +18,7 @@ fs-racing-yolo/src/yolo
 /home/dl/vision_ws/devel/.private/yolo/lib/python3/dist-packages/yolo/msg/__init__.py /home/dl/vision_ws/devel/lib/python3/dist-packages/yolo/msg/__init__.py
 /home/dl/vision_ws/devel/.private/yolo/lib/python3/dist-packages/yolo/msg/_LabeledPointArray.py /home/dl/vision_ws/devel/lib/python3/dist-packages/yolo/msg/_LabeledPointArray.py
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/yolo-trans_3D_to_2D.py /home/dl/vision_ws/devel/lib/yolo/yolo-trans_3D_to_2D.py
+/home/dl/vision_ws/devel/.private/yolo/lib/yolo/LTS_v2.py /home/dl/vision_ws/devel/lib/yolo/LTS_v2.py
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/cone_marker /home/dl/vision_ws/devel/lib/yolo/cone_marker
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/cmake.lock /home/dl/vision_ws/devel/lib/yolo/cmake.lock
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/tf_broadcaster /home/dl/vision_ws/devel/lib/yolo/tf_broadcaster

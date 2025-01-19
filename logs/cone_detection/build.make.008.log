@@ -1,0 +1,17 @@
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[ 23%] Built target conditional_removel
+[ 23%] Built target cone_legality_verification
+[ 35%] Built target euclidean_clustering
+[ 47%] Built target reconstructed_cone
+[ 58%] Built target downsampling
+[ 58%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
+[ 82%] Built target cone_detection_generate_messages_lisp
+[ 88%] Built target cone_detection_generate_messages_eus
+[ 82%] Built target cone_detection_generate_messages_nodejs
+[ 94%] Built target cone_detection_generate_messages_py
+[100%] Built target cone_detection_generate_messages_cpp
+[100%] Built target cone_detection_generate_messages

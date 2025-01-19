@@ -179,10 +179,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo" TYPE FILE FILES "/home/dl/vision_ws/src/fs-racing-yolo/src/yolo/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yolo" TYPE PROGRAM FILES "/home/dl/vision_ws/build/yolo/catkin_generated/installspace/yolo-trans_3D_to_2D.py")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/dl/vision_ws/build/yolo/gtest/cmake_install.cmake")
