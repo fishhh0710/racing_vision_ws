@@ -12,7 +12,7 @@
 const double eps = 1e-7;
 //type: 1:blue 2:yellow
 
-ros::Publisher pub;
+ros::Publisher pub,pub_label;
 
 
 std::vector<std::pair<double, double>> lidar_points;
@@ -21,12 +21,15 @@ std::vector<std::pair<std::pair<double,double>,int>> cam_points;
 // 儲存匹配的 Lidar 與 Camera 的 ID
 std::vector<std::pair<std::pair<double,double>,int>> matched_pts;
 
+int maxid = 0;
+
 visualization_msgs::Marker createMarker(int id, double x, double y, int color_label) {
     visualization_msgs::Marker marker;
     marker.header.frame_id = "map";
     marker.header.stamp = ros::Time::now();
     marker.ns = "lidar_camera";
     marker.id = id; // Marker 的唯一 ID
+    marker.action = marker.DELETEALL;
     marker.type = visualization_msgs::Marker::SPHERE; // 使用球體表示
     marker.action = visualization_msgs::Marker::ADD;
 
@@ -40,9 +43,9 @@ visualization_msgs::Marker createMarker(int id, double x, double y, int color_la
     marker.pose.orientation.w = 1.0;
 
     // 設置 Marker 的大小
-    marker.scale.x = 0.1;
-    marker.scale.y = 0.1;
-    marker.scale.z = 0.1;
+    marker.scale.x = 0.2;
+    marker.scale.y = 0.2;
+    marker.scale.z = 0.2;
 
     if (color_label == 1) {
         marker.color.r = 0.0;
@@ -54,11 +57,11 @@ visualization_msgs::Marker createMarker(int id, double x, double y, int color_la
         marker.color.g = 1.0;
         marker.color.b = 0.0;
         marker.color.a = 1.0;
-    } else {
-        marker.color.r = 1.0;
+    } else if(color_label == 99) {
+        marker.color.r = 0.0;
         marker.color.g = 0.0;
         marker.color.b = 0.0;
-        marker.color.a = 1.0;
+        marker.color.a = 0.0;
     }
 
     return marker;
@@ -71,24 +74,39 @@ double dis(std::pair<double,double> a,std::pair<double,double> b){
 void calculate_dis() {
     ROS_INFO("Lidar points size: %zu, Camera points size: %zu", lidar_points.size(), cam_points.size());
     visualization_msgs::MarkerArray marker_array;
+    camera_lidar_fusion::LabeledPointArray temp;
     matched_pts.clear();
     int now = 0;
     for(auto i:cam_points){
-        double min_dis = 1; //max error 0.5m
+        double min_dis = 5; //max error 0.5m
         std::pair<double,double> now_ds = {-1,-1};
         for(auto j:lidar_points){
-            if(min_dis>dis(i.F,j)){
+            if(min_dis > dis(i.F,j)){
                 min_dis = dis(i.F,j);
                 now_ds = j;
             }
         }
-        if(min_dis-0.25<eps){
+        if(abs(min_dis-5)>eps){
             matched_pts.push_back({now_ds,i.S});
             marker_array.markers.push_back(createMarker(matched_pts.size(),now_ds.F,now_ds.S,i.S));
+            maxid = std::max(maxid,(int)matched_pts.size());
+            temp.x.push_back(now_ds.F);
+            temp.y.push_back(now_ds.S);
+            if(i.S==1){
+                temp.labels.push_back("blue_cone");
+            }
+            else{
+                temp.labels.push_back("yellow_cone");
+            }
+        }
+        for(int i=0;i<maxid-matched_pts.size();i++){
+            marker_array.markers.push_back(createMarker(matched_pts.size()+1+i,0,0,99));
         }
         now++;
     }
     pub.publish(marker_array);
+    pub_label.publish(temp);
+    std::cout<<"matched pt:"<<marker_array.markers.size()<<"\n";
 
 }
 
@@ -132,6 +150,8 @@ int main(int argc, char** argv) {
     ros::init(argc, argv, "lidar_camera_match");
     ros::NodeHandle nh;
     pub = nh.advertise<visualization_msgs::MarkerArray>("/camera_lidar_fusion/lidar_camera_markers", 1);
+    pub_label = nh.advertise<camera_lidar_fusion::LabeledPointArray>("/camera_lidar_fusion/lidar_camera_pos", 1);
+    
     // Subscriber
     ros::Subscriber lidar_sub = nh.subscribe("/cone_detection", 1, lidarCallback);
     ros::Subscriber cam_sub = nh.subscribe("/yolo/objects/relative_coordinates", 1, cameraCallback);
@@ -141,6 +161,7 @@ int main(int argc, char** argv) {
     while (ros::ok()) {
         if (!lidar_points.empty() && !cam_points.empty()) {
             calculate_dis();   
+            // std::cout<<"matched pts:"<<matched_pts.size()<<"\n";
         }
 
         ros::spinOnce();

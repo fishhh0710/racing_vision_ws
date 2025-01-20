@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation
   visualization_msgs
+  message_filters
 )
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -206,3 +207,6 @@ ${catkin_INCLUDE_DIRS}
 
 add_executable(camera_lidar_fusion src/camera_lidar_fusion.cpp)
 target_link_libraries(camera_lidar_fusion ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
+add_executable(time_synchronization src/time_synchronization.cpp)
+target_link_libraries(time_synchronization ${catkin_LIBRARIES} ${PCL_LIBRARIES})

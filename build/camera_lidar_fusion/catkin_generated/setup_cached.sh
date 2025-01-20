@@ -8,8 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/dl/vision_ws/devel/.private/camera_lidar_fusion:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib:$LD_LIBRARY_PATH"
 export PWD='/home/dl/vision_ws/build/camera_lidar_fusion'
-export PYTHONPATH="/home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/dl/vision_ws/src/camera_lidar_fusion:$ROS_PACKAGE_PATH"

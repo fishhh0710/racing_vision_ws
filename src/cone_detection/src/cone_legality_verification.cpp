@@ -43,9 +43,9 @@ void coneReconstruction(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     
 
     pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
-    ec.setClusterTolerance(0.19);
-    ec.setMinClusterSize(0);
-    ec.setMaxClusterSize(400);
+    ec.setClusterTolerance(0.2);
+    ec.setMinClusterSize(5);
+    ec.setMaxClusterSize(50);
     ec.setSearchMethod(tree);
     ec.setInputCloud(cloud);
 

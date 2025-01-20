@@ -2,14 +2,14 @@
 [  0%] Built target std_msgs_generate_messages_lisp
 [ 11%] Built target conditional_removel
 [ 11%] Built target std_msgs_generate_messages_py
+[ 11%] Built target std_msgs_generate_messages_nodejs
+[ 11%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
 [ 17%] [32mBuilding CXX object CMakeFiles/cone_legality_verification.dir/src/cone_legality_verification.cpp.o[0m
-[ 17%] Built target std_msgs_generate_messages_nodejs
 [ 17%] Built target std_msgs_generate_messages_eus
-[ 17%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
 [ 17%] Built target std_msgs_generate_messages_cpp
-[ 23%] Built target cone_detection_generate_messages_lisp
-[ 35%] Built target euclidean_clustering
-[ 47%] Built target reconstructed_cone
+[ 29%] Built target euclidean_clustering
+[ 41%] Built target reconstructed_cone
+[ 47%] Built target cone_detection_generate_messages_lisp
 [ 58%] Built target downsampling
 [ 70%] Built target cone_detection_generate_messages_py
 [ 76%] Built target cone_detection_generate_messages_nodejs

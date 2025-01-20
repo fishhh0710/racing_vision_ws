@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/dl/vision_ws/build/camera_lidar_fusion
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/time_synchronization.dir/all
 all: CMakeFiles/camera_lidar_fusion_generate_messages.dir/all
 all: CMakeFiles/camera_lidar_fusion.dir/all
 all: gtest/all
@@ -65,6 +66,7 @@ preinstall: gtest/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/time_synchronization.dir/clean
 clean: CMakeFiles/camera_lidar_fusion_generate_messages_py.dir/clean
 clean: CMakeFiles/camera_lidar_fusion_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/camera_lidar_fusion_generate_messages_lisp.dir/clean
@@ -168,6 +170,33 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest_main.dir/clean
 gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 .PHONY : gtest/googletest/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/time_synchronization.dir
+
+# All Build rule for target.
+CMakeFiles/time_synchronization.dir/all:
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/depend
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=18,19 "Built target time_synchronization"
+.PHONY : CMakeFiles/time_synchronization.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/time_synchronization.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/time_synchronization.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles 0
+.PHONY : CMakeFiles/time_synchronization.dir/rule
+
+# Convenience name for target.
+time_synchronization: CMakeFiles/time_synchronization.dir/rule
+
+.PHONY : time_synchronization
+
+# clean rule for target.
+CMakeFiles/time_synchronization.dir/clean:
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/clean
+.PHONY : CMakeFiles/time_synchronization.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/camera_lidar_fusion_generate_messages_py.dir

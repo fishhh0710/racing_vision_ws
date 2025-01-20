@@ -662,7 +662,7 @@ _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
 //The directory containing a CMake configuration file for catkin_simple.
-catkin_simple_DIR:PATH=/home/dl/catkin_ws/devel/share/catkin_simple/cmake
+catkin_simple_DIR:PATH=/home/dl/vision_ws/devel/share/catkin_simple/cmake
 
 //The directory containing a CMake configuration file for flann.
 flann_DIR:PATH=flann_DIR-NOTFOUND

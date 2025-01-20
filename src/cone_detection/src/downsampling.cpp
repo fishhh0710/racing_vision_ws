@@ -14,7 +14,7 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::fromROSMsg(*cloud_msg, *cloud);
 
-    // 移除點雲中的 NaN 值
+    // remove NaN in Point cloud
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_filtered(new pcl::PointCloud<pcl::PointXYZ>);
     std::vector<int> indices;
     pcl::removeNaNFromPointCloud(*cloud, *cloud_filtered, indices);
@@ -53,7 +53,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "euclidean_clustering");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/rslidar_points", 1, cloudCallback);
+    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/synced_lidar", 1, cloudCallback);
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/downsampled_cloud", 1);
 

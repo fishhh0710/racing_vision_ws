@@ -59,7 +59,7 @@ class Node:
 
         ### Subscriber ###
         self.col1_msg = None
-        self.sub_col1 = rospy.Subscriber("/usb_cam/image_raw", Image, self.col_callback1)
+        self.sub_col1 = rospy.Subscriber("/synced_camera", Image, self.col_callback1)
 
         ### Other tools ###
         # CvBridge

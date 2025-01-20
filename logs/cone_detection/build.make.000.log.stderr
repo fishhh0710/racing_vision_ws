@@ -1,8 +1,7 @@
-[01m[K/home/dl/vision_ws/src/cone_detection/src/cone_legality_verification.cpp:14:10:[m[K [01;31m[Kfatal error: [m[Kpcl_ros_tutorial/LabeledPointArray.h: No such file or directory
-   14 | #include [01;31m[K"pcl_ros_tutorial/LabeledPointArray.h"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dl/vision_ws/src/cone_detection/src/cone_legality_verification.cpp:14:10:[m[K [01;31m[Kfatal error: [m[Kcone_detection/LabeledPointArray.h: No such file or directory
+   14 | #include [01;31m[K"cone_detection/LabeledPointArray.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
 compilation terminated.
 make[2]: *** [CMakeFiles/cone_legality_verification.dir/build.make:63: CMakeFiles/cone_legality_verification.dir/src/cone_legality_verification.cpp.o] Error 1
 make[1]: *** [CMakeFiles/Makefile2:244: CMakeFiles/cone_legality_verification.dir/all] Error 2
-make[1]: *** Waiting for unfinished jobs....
 make: *** [Makefile:141: all] Error 2

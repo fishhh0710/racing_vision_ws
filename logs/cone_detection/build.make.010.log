@@ -1,17 +1,20 @@
+[35m[1mScanning dependencies of target cone_legality_verification[0m
 [  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
 [ 11%] Built target conditional_removel
-[ 23%] Built target cone_legality_verification
-[ 23%] Built target std_msgs_generate_messages_py
-[ 23%] Built target std_msgs_generate_messages_eus
-[ 23%] Built target std_msgs_generate_messages_nodejs
-[ 23%] Built target std_msgs_generate_messages_cpp
-[ 23%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
-[ 29%] Built target cone_detection_generate_messages_lisp
-[ 41%] Built target euclidean_clustering
-[ 52%] Built target reconstructed_cone
-[ 64%] Built target downsampling
-[ 76%] Built target cone_detection_generate_messages_py
-[ 82%] Built target cone_detection_generate_messages_nodejs
-[ 94%] Built target cone_detection_generate_messages_eus
-[100%] Built target cone_detection_generate_messages_cpp
-[100%] Built target cone_detection_generate_messages
+[ 17%] [32mBuilding CXX object CMakeFiles/cone_legality_verification.dir/src/cone_legality_verification.cpp.o[0m
+[ 17%] Built target std_msgs_generate_messages_eus
+[ 17%] Built target std_msgs_generate_messages_cpp
+[ 17%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
+[ 29%] Built target euclidean_clustering
+[ 35%] Built target cone_detection_generate_messages_lisp
+[ 47%] Built target reconstructed_cone
+[ 58%] Built target downsampling
+[ 70%] Built target cone_detection_generate_messages_py
+[ 76%] Built target cone_detection_generate_messages_nodejs
+[ 88%] Built target cone_detection_generate_messages_eus
+[ 94%] Built target cone_detection_generate_messages_cpp
+[ 94%] Built target cone_detection_generate_messages
+[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/cone_legality_verification[0m
+[100%] Built target cone_legality_verification

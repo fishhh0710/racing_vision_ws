@@ -34,13 +34,10 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "conditional_removal");
     ros::NodeHandle nh;
 
-    // 订阅原始点云主题
     ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_points", 1, cloudCallback);
 
-    // 创建点云发布者
     pub = nh.advertise<sensor_msgs::PointCloud2>("/field_of_view_trimming", 1);
 
-    // 开始 ROS 循环
     ros::spin();
 
     return 0;

@@ -43,6 +43,7 @@ visualization_msgs::Marker createMarker(int id, double x, double y, int color_la
     marker.header.frame_id = "map"; // 根據你的固定框架設定
     marker.header.stamp = ros::Time::now();
     marker.ns = "lidar_camera";
+    marker.action = marker.DELETEALL;
     marker.id = id; // Marker 的唯一 ID
     marker.type = visualization_msgs::Marker::SPHERE; // 使用球體表示
     marker.action = visualization_msgs::Marker::ADD;

@@ -1,8 +1,8 @@
 In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
                  from [01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:1[m[K:
 [01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:148:14:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kstd::vector<std::pair<std::pair<double, double>, int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
-  148 |     ROS_INFO([01;35m[K"Total Matches: %d"[m[K, [32m[Kmatched_pts.size()[m[K);
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:152:14:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kstd::vector<std::pair<std::pair<double, double>, int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  152 |     ROS_INFO([01;35m[K"Total Matches: %d"[m[K, [32m[Kmatched_pts.size()[m[K);
       |              [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~~~~~~~~~~[m[K
       |                                                   [32m[K|[m[K
       |                                                   [32m[Kstd::vector<std::pair<std::pair<double, double>, int> >::size_type {aka long unsigned int}[m[K
@@ -18,11 +18,11 @@ In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
 [01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
   110 | #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
       |                       [01;36m[K^~~~~~~[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:148:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
-  148 |     [01;36m[KROS_INFO[m[K("Total Matches: %d", matched_pts.size());
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:152:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+  152 |     [01;36m[KROS_INFO[m[K("Total Matches: %d", matched_pts.size());
       |     [01;36m[K^~~~~~~~[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:148:31:[m[K [01;36m[Knote: [m[Kformat string is defined here
-  148 |     ROS_INFO("Total Matches: [01;36m[K%d[m[K", matched_pts.size());
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:152:31:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  152 |     ROS_INFO("Total Matches: [01;36m[K%d[m[K", matched_pts.size());
       |                              [01;36m[K~^[m[K
       |                               [01;36m[K|[m[K
       |                               [01;36m[Kint[m[K

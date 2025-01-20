@@ -1,23 +1,8 @@
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:[m[K In function ‘[01m[Kvoid calculate_dis()[m[K’:
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:84:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kvisualization_msgs::MarkerArray[m[K’ {aka ‘[01m[Kstruct visualization_msgs::MarkerArray_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kpush_back[m[K’
-   84 |             marker_array.[01;31m[Kpush_back[m[K(createMarker(matched_ids.size(),now_ds.F,now_ds.S,i.S));
-      |                          [01;31m[K^~~~~~~~~[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:84:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kmatched_ids[m[K’ was not declared in this scope; did you mean ‘[01m[Kmatched_pts[m[K’?
-   84 |             marker_array.push_back(createMarker([01;31m[Kmatched_ids[m[K.size(),now_ds.F,now_ds.S,i.S));
-      |                                                 [01;31m[K^~~~~~~~~~~[m[K
-      |                                                 [32m[Kmatched_pts[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:[m[K In function ‘[01m[Kvoid cameraCallback(camera_lidar_fusion::LabeledPointArray)[m[K’:
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:114:15:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kconst LabeledPointArray[m[K’ {aka ‘[01m[Kconst camera_lidar_fusion::LabeledPointArray_<std::allocator<void> >[m[K’} and ‘[01m[Kint[m[K’)
-  114 |         if(msg[01;31m[K[[m[Ki]=="B"){
-      |               [01;31m[K^[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:117:20:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kconst LabeledPointArray[m[K’ {aka ‘[01m[Kconst camera_lidar_fusion::LabeledPointArray_<std::allocator<void> >[m[K’} and ‘[01m[Kint[m[K’)
-  117 |         else if(msg[01;31m[K[[m[Ki]=="Y"){
-      |                    [01;31m[K^[m[K
 In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
                  from [01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:1[m[K:
 [01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:148:14:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kstd::vector<std::pair<std::pair<double, double>, int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
-  148 |     ROS_INFO([01;35m[K"Total Matches: %d"[m[K, [32m[Kmatched_pts.size()[m[K);
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:152:14:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kstd::vector<std::pair<std::pair<double, double>, int> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wformat=[m[K]
+  152 |     ROS_INFO([01;35m[K"Total Matches: %d"[m[K, [32m[Kmatched_pts.size()[m[K);
       |              [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~~~~~~~~~~[m[K
       |                                                   [32m[K|[m[K
       |                                                   [32m[Kstd::vector<std::pair<std::pair<double, double>, int> >::size_type {aka long unsigned int}[m[K
@@ -33,15 +18,12 @@ In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
 [01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
   110 | #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
       |                       [01;36m[K^~~~~~~[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:148:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
-  148 |     [01;36m[KROS_INFO[m[K("Total Matches: %d", matched_pts.size());
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:152:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+  152 |     [01;36m[KROS_INFO[m[K("Total Matches: %d", matched_pts.size());
       |     [01;36m[K^~~~~~~~[m[K
-[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:148:31:[m[K [01;36m[Knote: [m[Kformat string is defined here
-  148 |     ROS_INFO("Total Matches: [01;36m[K%d[m[K", matched_pts.size());
+[01m[K/home/dl/vision_ws/src/camera_lidar_fusion/src/camera_lidar_fusion.cpp:152:31:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  152 |     ROS_INFO("Total Matches: [01;36m[K%d[m[K", matched_pts.size());
       |                              [01;36m[K~^[m[K
       |                               [01;36m[K|[m[K
       |                               [01;36m[Kint[m[K
       |                              [32m[K%ld[m[K
-make[2]: *** [CMakeFiles/camera_lidar_fusion.dir/build.make:63: CMakeFiles/camera_lidar_fusion.dir/src/camera_lidar_fusion.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:1267: CMakeFiles/camera_lidar_fusion.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2

@@ -1,13 +1,14 @@
-[  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target std_msgs_generate_messages_py
-[  0%] Built target std_msgs_generate_messages_lisp
-[  0%] Built target std_msgs_generate_messages_eus
-[  0%] Built target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray
-[ 22%] Built target camera_lidar_fusion
-[ 33%] Built target camera_lidar_fusion_generate_messages_nodejs
-[ 55%] Built target camera_lidar_fusion_generate_messages_py
-[ 66%] Built target camera_lidar_fusion_generate_messages_cpp
-[ 77%] Built target camera_lidar_fusion_generate_messages_lisp
+[ 18%] Built target time_synchronization
+[ 18%] Built target std_msgs_generate_messages_nodejs
+[ 18%] Built target std_msgs_generate_messages_lisp
+[ 18%] Built target std_msgs_generate_messages_eus
+[ 36%] Built target camera_lidar_fusion
+[ 36%] Built target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray
+[ 45%] Built target camera_lidar_fusion_generate_messages_lisp
+[ 63%] Built target camera_lidar_fusion_generate_messages_py
+[ 72%] Built target camera_lidar_fusion_generate_messages_nodejs
+[ 81%] Built target camera_lidar_fusion_generate_messages_cpp
 [100%] Built target camera_lidar_fusion_generate_messages_eus
 [100%] Built target camera_lidar_fusion_generate_messages

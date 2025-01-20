@@ -29,9 +29,9 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
     std::vector<pcl::PointIndices> cluster_indices;
     pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
-    ec.setClusterTolerance(0.05);  // Adjust the cluster tolerance according to your needs
-    ec.setMinClusterSize(10);     // Adjust the minimum cluster size according to your needs
-    ec.setMaxClusterSize(30);   // Adjust the maximum cluster size according to your needs
+    ec.setClusterTolerance(0.2);  // Adjust the cluster tolerance according to your needs
+    ec.setMinClusterSize(5);     // Adjust the minimum cluster size according to your needs
+    ec.setMaxClusterSize(50);   // Adjust the maximum cluster size according to your needs
     ec.setSearchMethod(tree);
     ec.setInputCloud(cloud_downsampled);
     ec.extract(cluster_indices);
@@ -40,6 +40,10 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr colored_cluster(new pcl::PointCloud<pcl::PointXYZRGB>);
     for (const auto& indices : cluster_indices)
     {
+        int a,b,c;
+        a = rand()%256;
+        b = rand()%256;
+        c = rand()%256;
         for (const auto& index : indices.indices)
         {
             pcl::PointXYZRGB point;
@@ -48,9 +52,9 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
             point.z = cloud_downsampled->points[index].z;
 
             // Assign random color to each point
-            point.r = rand() % 256;
-            point.g = rand() % 256;
-            point.b = rand() % 256;
+            point.r = a;
+            point.g = b;
+            point.b = c;
 
             colored_cluster->points.push_back(point);
         }

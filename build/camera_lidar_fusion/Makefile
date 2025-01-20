@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named time_synchronization
+
+# Build rule for target.
+time_synchronization: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 time_synchronization
+.PHONY : time_synchronization
+
+# fast build rule for target.
+time_synchronization/fast:
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/build
+.PHONY : time_synchronization/fast
+
+#=============================================================================
 # Target rules for targets named camera_lidar_fusion_generate_messages_py
 
 # Build rule for target.
@@ -805,6 +818,33 @@ src/camera_lidar_fusion.cpp.s:
 	$(MAKE) -f CMakeFiles/camera_lidar_fusion.dir/build.make CMakeFiles/camera_lidar_fusion.dir/src/camera_lidar_fusion.cpp.s
 .PHONY : src/camera_lidar_fusion.cpp.s
 
+src/time_synchronization.o: src/time_synchronization.cpp.o
+
+.PHONY : src/time_synchronization.o
+
+# target to build an object file
+src/time_synchronization.cpp.o:
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/src/time_synchronization.cpp.o
+.PHONY : src/time_synchronization.cpp.o
+
+src/time_synchronization.i: src/time_synchronization.cpp.i
+
+.PHONY : src/time_synchronization.i
+
+# target to preprocess a source file
+src/time_synchronization.cpp.i:
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/src/time_synchronization.cpp.i
+.PHONY : src/time_synchronization.cpp.i
+
+src/time_synchronization.s: src/time_synchronization.cpp.s
+
+.PHONY : src/time_synchronization.s
+
+# target to generate assembly for a file
+src/time_synchronization.cpp.s:
+	$(MAKE) -f CMakeFiles/time_synchronization.dir/build.make CMakeFiles/time_synchronization.dir/src/time_synchronization.cpp.s
+.PHONY : src/time_synchronization.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -813,6 +853,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... edit_cache"
+	@echo "... time_synchronization"
 	@echo "... camera_lidar_fusion_generate_messages_py"
 	@echo "... camera_lidar_fusion_generate_messages_nodejs"
 	@echo "... camera_lidar_fusion_generate_messages_lisp"
@@ -868,6 +909,9 @@ help:
 	@echo "... src/camera_lidar_fusion.o"
 	@echo "... src/camera_lidar_fusion.i"
 	@echo "... src/camera_lidar_fusion.s"
+	@echo "... src/time_synchronization.o"
+	@echo "... src/time_synchronization.i"
+	@echo "... src/time_synchronization.s"
 .PHONY : help
 
 
