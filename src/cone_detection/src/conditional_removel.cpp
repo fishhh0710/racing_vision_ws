@@ -14,27 +14,28 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::fromROSMsg(*cloud_msg, *cloud);
 
-    // 定义视野修剪框的范围
     pcl::CropBox<pcl::PointXYZ> crop;
     crop.setInputCloud(cloud);
-    crop.setMin(Eigen::Vector4f(-1.0, -1.0, -1.0, 1.0));  // 定义修剪框的最小范围
-    crop.setMax(Eigen::Vector4f(2.0, 1.0, 2.0, 1.0));     // 定义修剪框的最大范围
+    crop.setMin(Eigen::Vector4f(-7, -1, -0.5, 1.0));
+    crop.setMax(Eigen::Vector4f(7, 20, 0.5, 1.0));
     pcl::PointCloud<pcl::PointXYZ> cropped_cloud;
     crop.filter(cropped_cloud);
 
-    // 发布修剪后的点云
     sensor_msgs::PointCloud2 output_cloud;
     pcl::toROSMsg(cropped_cloud, output_cloud);
     output_cloud.header = cloud_msg->header;
     pub.publish(output_cloud);
+    // std::cout<<"size:"<<output_cloud.size()<<"\n";
 }
 
 int main(int argc, char** argv)
 {
+
+    std::cout<<"Conditional removal running...\n";
     ros::init(argc, argv, "conditional_removal");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/velodyne_points", 1, cloudCallback);
+    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/rslidar_points", 1, cloudCallback);
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/field_of_view_trimming", 1);
 

@@ -41,7 +41,7 @@ void coneReconstruction(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
     tree->setInputCloud(cloud);
     
-
+    std::cout<<"cloud size="<<cloud->size()<<"\n";
     pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
     ec.setClusterTolerance(0.2);
     ec.setMinClusterSize(5);

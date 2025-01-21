@@ -6,9 +6,9 @@
 [ 18%] Built target std_msgs_generate_messages_eus
 [ 36%] Built target camera_lidar_fusion
 [ 36%] Built target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray
-[ 45%] Built target camera_lidar_fusion_generate_messages_lisp
 [ 63%] Built target camera_lidar_fusion_generate_messages_py
-[ 72%] Built target camera_lidar_fusion_generate_messages_nodejs
+[ 63%] Built target camera_lidar_fusion_generate_messages_nodejs
+[ 72%] Built target camera_lidar_fusion_generate_messages_lisp
 [ 81%] Built target camera_lidar_fusion_generate_messages_cpp
 [100%] Built target camera_lidar_fusion_generate_messages_eus
 [100%] Built target camera_lidar_fusion_generate_messages

@@ -19,7 +19,7 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     std::vector<int> indices;
     pcl::removeNaNFromPointCloud(*cloud, *cloud_filtered, indices);
     
-    //篩選點雲中三個維度的數據
+    //篩選點雲中三個維度的數據  
     pcl::PassThrough<pcl::PointXYZ> pass;
     pass.setInputCloud(cloud_filtered);
     pass.setFilterFieldName("x"); // 過濾 X 軸
@@ -50,10 +50,11 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "euclidean_clustering");
+    std::cout<<"start downsample...\n";
+    ros::init(argc, argv, "downsample");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/synced_lidar", 1, cloudCallback);
+    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/field_of_view_trimming", 1, cloudCallback);
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/downsampled_cloud", 1);
 
