@@ -22,4 +22,5 @@ cone_detection
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/euclidean_clustering /home/dl/vision_ws/devel/lib/cone_detection/euclidean_clustering
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/reconstructed_cone /home/dl/vision_ws/devel/lib/cone_detection/reconstructed_cone
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel /home/dl/vision_ws/devel/lib/cone_detection/conditional_removel
+/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan /home/dl/vision_ws/devel/lib/cone_detection/dbscan
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/downsampling /home/dl/vision_ws/devel/lib/cone_detection/downsampling

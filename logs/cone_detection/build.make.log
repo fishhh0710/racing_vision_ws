@@ -1,20 +1,21 @@
-[35m[1mScanning dependencies of target cone_legality_verification[0m
-[  0%] Built target std_msgs_generate_messages_cpp
-[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
 [  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_nodejs
-[  0%] Built target std_msgs_generate_messages_lisp
-[ 12%] Built target downsampling
-[ 25%] Built target conditional_removel
-[ 37%] Built target reconstructed_cone
-[ 50%] Built target euclidean_clustering
-[ 56%] [32mBuilding CXX object CMakeFiles/cone_legality_verification.dir/src/cone_legality_verification.cpp.o[0m
-[ 56%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
-[ 68%] Built target cone_detection_generate_messages_lisp
-[ 68%] Built target cone_detection_generate_messages_nodejs
-[ 68%] Built target cone_detection_generate_messages_cpp
-[ 81%] Built target cone_detection_generate_messages_py
-[ 93%] Built target cone_detection_generate_messages_eus
-[ 93%] Built target cone_detection_generate_messages
-[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/cone_legality_verification[0m
-[100%] Built target cone_legality_verification
+[ 11%] Built target cone_legality_verification
+[ 22%] Built target conditional_removel
+[ 22%] Built target std_msgs_generate_messages_eus
+[ 22%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
+[ 22%] Built target std_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target dbscan[0m
+[ 33%] Built target downsampling
+[ 44%] Built target euclidean_clustering
+[ 50%] Built target cone_detection_generate_messages_lisp
+[ 61%] Built target reconstructed_cone
+[ 66%] Built target cone_detection_generate_messages_nodejs
+[ 77%] Built target cone_detection_generate_messages_py
+[ 88%] Built target cone_detection_generate_messages_eus
+[ 88%] Built target cone_detection_generate_messages_cpp
+[ 94%] [32mBuilding CXX object CMakeFiles/dbscan.dir/src/dbscan.cpp.o[0m
+[ 94%] Built target cone_detection_generate_messages
+[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan[0m
+[100%] Built target dbscan

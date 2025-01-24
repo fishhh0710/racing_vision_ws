@@ -91,3 +91,6 @@ target_link_libraries(cone_legality_verification ${catkin_LIBRARIES} ${PCL_LIBRA
 
 add_executable(downsampling src/downsampling.cpp)
 target_link_libraries(downsampling ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
+add_executable(dbscan src/dbscan.cpp)
+target_link_libraries(dbscan ${catkin_LIBRARIES} ${PCL_LIBRARIES})
