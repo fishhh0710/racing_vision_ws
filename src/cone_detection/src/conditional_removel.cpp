@@ -9,6 +9,7 @@ ros::Publisher pub;
 // 將 PCLVisualizer 的初始化移除
 // pcl::visualization::PCLVisualizer viewer("PCL Viewer");
 
+
 void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
