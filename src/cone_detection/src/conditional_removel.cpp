@@ -16,8 +16,8 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
     pcl::CropBox<pcl::PointXYZ> crop;
     crop.setInputCloud(cloud);
-    crop.setMin(Eigen::Vector4f(-7, -1, -0.5, 1.0));
-    crop.setMax(Eigen::Vector4f(7, 20, 0.5, 1.0));
+    crop.setMin(Eigen::Vector4f(0, -12, -0.5, 1.0));
+    crop.setMax(Eigen::Vector4f(300, 12, 0.5, 1.0));
     pcl::PointCloud<pcl::PointXYZ> cropped_cloud;
     crop.filter(cropped_cloud);
 
@@ -30,7 +30,6 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
 int main(int argc, char** argv)
 {
-
     std::cout<<"Conditional removal running...\n";
     ros::init(argc, argv, "conditional_removal");
     ros::NodeHandle nh;

@@ -78,17 +78,17 @@ void calculate_dis() {
     matched_pts.clear();
     int now = 0;
     for(auto i:cam_points){
-        double min_dis = 5; //max error 0.5m
+        double min_dis = 1; //max error 0.5m
         std::pair<double,double> now_ds = {-1,-1};
         for(auto j:lidar_points){
-            if(min_dis > dis(i.F,j)){
-                min_dis = dis(i.F,j);
+            if(min_dis > dis(i.F, j)){
+                min_dis = dis(i.F, j);
                 now_ds = j;
             }
         }
-        if(abs(min_dis-5)>eps){
-            matched_pts.push_back({now_ds,i.S});
-            marker_array.markers.push_back(createMarker(matched_pts.size(),now_ds.F,now_ds.S,i.S));
+        if(abs(min_dis - 5) > eps){
+            matched_pts.push_back({now_ds, i.S});
+            marker_array.markers.push_back(createMarker(matched_pts.size(), now_ds.F, now_ds.S, i.S));
             maxid = std::max(maxid,(int)matched_pts.size());
             temp.x.push_back(now_ds.F);
             temp.y.push_back(now_ds.S);
@@ -99,8 +99,8 @@ void calculate_dis() {
                 temp.labels.push_back("yellow_cone");
             }
         }
-        for(int i=0;i<maxid-matched_pts.size();i++){
-            marker_array.markers.push_back(createMarker(matched_pts.size()+1+i,0,0,99));
+        for(int i = 0; i < maxid - matched_pts.size(); i++){
+            marker_array.markers.push_back(createMarker(matched_pts.size() + 1 + i, 0, 0, 99));
         }
         now++;
     }
@@ -124,7 +124,7 @@ void lidarCallback(const camera_lidar_fusion::LabeledPointArray msg) {
 void cameraCallback(const camera_lidar_fusion::LabeledPointArray msg) {
     cam_points.clear();
     
-    for (int i=0;i<msg.x.size();i++){
+    for (int i = 0; i < msg.x.size(); i++){
         // std::tuple<double, double,int> temp;
         std::pair<std::pair<double,double>,int> temp;
         temp.F.F = msg.x[i];
@@ -160,7 +160,7 @@ int main(int argc, char** argv) {
 
     while (ros::ok()) {
         if (!lidar_points.empty() && !cam_points.empty()) {
-            calculate_dis();   
+            calculate_dis();
             // std::cout<<"matched pts:"<<matched_pts.size()<<"\n";
         }
 

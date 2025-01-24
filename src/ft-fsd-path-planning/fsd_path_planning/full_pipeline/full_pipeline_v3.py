@@ -422,7 +422,7 @@ start_time = None
 previous_cone_marker_ids = []
 
 def delete_previous_cone_markers(current_ids):
-    """刪除舊的圓錐 Marker，僅刪除不再需要的 ID。"""
+    """刪除舊的圓錐 Marker, 僅刪除不再需要的 ID。"""
     global previous_cone_marker_ids
     marker_array = MarkerArray()
 
@@ -564,6 +564,7 @@ if __name__ == '__main__':
         slam_direction=vehicle_direction
     )
 
-    rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
+    #rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
+    rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
 
     rospy.spin()

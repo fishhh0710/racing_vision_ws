@@ -16,7 +16,7 @@
 
 
 ros::Publisher pub;
-ros::Publisher marker_pub,test_marker_pub;
+ros::Publisher marker_pub, test_marker_pub;
 
 bool isConeLegal(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cone_cloud)
 {
@@ -32,7 +32,7 @@ bool isConeLegal(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cone_cloud)
 
     return (coneHeight >= minHeight) && (coneHeight <= maxHeight) && (density >= minDensity);
 }
-
+int maxid = 0;
 void coneReconstruction(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -93,20 +93,30 @@ void coneReconstruction(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
             marker.color.g = 0.0;
             marker.color.b = 0.0;
             marker.color.a = 1.0;
-            // marker.lifetime = ros::Duration();
+            marker.lifetime = ros::Duration();
 
             marker_array.markers.push_back(marker);
             test_marker_pub.publish(marker);
         }
     }
+    maxid = std::max(maxid,(int)marker_array.markers.size());
+    for(int i = marker_array.markers.size(); i < maxid; i++){
+        visualization_msgs::Marker marker;
+        marker.header = cluster_msg.header;
+        marker.header.frame_id = "rslidar";
+        marker.ns = "cone_marker";
+        marker.id = i;
+        marker.action = visualization_msgs::Marker::DELETE;
+        marker_array.markers.push_back(marker);
+    }
+    maxid = marker_array.markers.size();
     pub.publish(ret);
     marker_pub.publish(marker_array);
-    std::cout<<marker_array.markers.size()<<"\n";
+    std::cout<<"cone detected:"<<ret.x.size()<<"\n";
 }
 
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
     ros::init(argc, argv, "cone_detection");
     ros::NodeHandle nh;
     std::cout<<"start cone detection...\n";
