@@ -1,5 +1,9 @@
 <launch>
-  <node pkg="cone_detection" name="downsampling_node" type="downsampling" output="screen"/>
-  <node pkg="cone_detection" name="conditional_removal_node" type="conditional_removel" output="screen"/>
-  <node pkg="cone_detection" name="cone_legality_verification_node" type="cone_legality_verification" output="screen"/>
+  <group>
+    <rosparam command="load" file = "$(find cone_detection)/launch/cone_detection_parms.yaml"/>
+    <node pkg="cone_detection" name="downsampling_node" type="downsampling" output="screen"/>
+    <node pkg="cone_detection" name="conditional_removal_node" type="conditional_removel" output="screen"/>
+    <node pkg="cone_detection" name="dbscan_node" type="dbscan" output="screen"/>
+  </group>
+  <!-- <node pkg="cone_detection" name="cone_legality_verification_node" type="cone_legality_verification" output="screen"/> --> -->
 </launch>

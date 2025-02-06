@@ -1,0 +1,18 @@
+test: 1
+dbscan_eps: 0.05
+dbscan_k: 1
+
+downsampling_x_leafsize: 0.05
+downsampling_y_leafsize: 0.05
+downsampling_z_leafsize: 0.002
+
+conditional_removel_min_x: -12
+conditional_removel_max_x: 12
+conditional_removel_min_y: 0
+conditional_removel_max_y: 300
+conditional_removel_min_z: -0.5
+conditional_removel_max_z: 0.5
+
+conditional_source: "/rslidar_points"
+downsample_source: "/field_of_view_trimming"
+dbscan_source: "/ground_segmentation/obstacle_cloud"

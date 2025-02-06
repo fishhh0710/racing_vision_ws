@@ -3,12 +3,14 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/filters/crop_box.h>
+#include "ros/ros.h"
 
 ros::Publisher pub;
+using namespace std;
 
 // 將 PCLVisualizer 的初始化移除
 // pcl::visualization::PCLVisualizer viewer("PCL Viewer");
-
+float min_x,min_y,min_z,max_x,max_y,max_z;
 
 void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
@@ -17,8 +19,8 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
     pcl::CropBox<pcl::PointXYZ> crop;
     crop.setInputCloud(cloud);
-    crop.setMin(Eigen::Vector4f(0, -12, -0.5, 1.0));
-    crop.setMax(Eigen::Vector4f(300, 12, 0.5, 1.0));
+    crop.setMin(Eigen::Vector4f(min_x, min_y, min_z, 1.0));
+    crop.setMax(Eigen::Vector4f(max_x, max_y, max_z, 1.0));
     pcl::PointCloud<pcl::PointXYZ> cropped_cloud;
     crop.filter(cropped_cloud);
 
@@ -31,11 +33,24 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
 int main(int argc, char** argv)
 {
-    std::cout<<"Conditional removal running...\n";
+    cout<<"[Conditional removal]Conditional removal running...\n";
     ros::init(argc, argv, "conditional_removal");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/rslidar_points", 1, cloudCallback);
+    bool res = 1;
+    string sub_source;
+    res&=nh.getParam("conditional_removel_min_x",min_x);
+    res&=nh.getParam("conditional_removel_min_y",min_y);
+    res&=nh.getParam("conditional_removel_min_z",min_z);
+    res&=nh.getParam("conditional_removel_max_x",min_x);
+    res&=nh.getParam("conditional_removel_max_y",min_y);
+    res&=nh.getParam("conditional_removel_max_z",min_z);
+    res&=nh.getParam("conditional_source",sub_source);
+
+    cout<<"[Conditional removal] Param get "<<(res?"successfully":"faild")<<"\n";
+    
+
+    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>(sub_source, 1, cloudCallback);
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/field_of_view_trimming", 1);
 

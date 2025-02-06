@@ -7,6 +7,9 @@
 #include <pcl/filters/passthrough.h>
 
 ros::Publisher pub;
+using namespace std;
+
+double parm_x,parm_y,parm_z;
 
 void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 {
@@ -37,7 +40,7 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     // Voxel grid downsampling
     pcl::VoxelGrid<pcl::PointXYZ> vg;
     vg.setInputCloud(cloud_filtered);
-    vg.setLeafSize(0.03, 0.03, 0.002);  // Adjust the leaf size according to your needs
+    vg.setLeafSize(parm_x, parm_y, parm_z);  // 0.03 0.03 0.002
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_downsampled(new pcl::PointCloud<pcl::PointXYZ>);
     vg.filter(*cloud_downsampled);
 
@@ -50,11 +53,19 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
 
 int main(int argc, char** argv)
 {
-    std::cout<<"start downsample...\n";
+    cout<<"[downspamleing] Start downsample...\n";
     ros::init(argc, argv, "downsample");
     ros::NodeHandle nh;
 
-    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/field_of_view_trimming", 1, cloudCallback);
+    nh.getParam("downsampling_x_leafsize",parm_x);
+    nh.getParam("downsampling_y_leafsize",parm_y);
+    nh.getParam("downsampling_z_leafsize",parm_z);
+    cout<<"[downsampling] parm_x,y,z = ("<<parm_x<<","<<parm_y<<","<<parm_z<<")\n";
+
+    string sub_source;
+    nh.getParam("downsample_source",sub_source);
+
+    ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>(sub_source, 1, cloudCallback);
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/downsampled_cloud", 1);
 

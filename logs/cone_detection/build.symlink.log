@@ -18,6 +18,7 @@ Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/python3/dist-packa
 Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/pkgconfig/cone_detection.pc, /home/dl/vision_ws/devel/lib/pkgconfig/cone_detection.pc)
 Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/cone_legality_verification, /home/dl/vision_ws/devel/lib/cone_detection/cone_legality_verification)
 Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/euclidean_clustering, /home/dl/vision_ws/devel/lib/cone_detection/euclidean_clustering)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/pointcloud_angle_rotation, /home/dl/vision_ws/devel/lib/cone_detection/pointcloud_angle_rotation)
 Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/reconstructed_cone, /home/dl/vision_ws/devel/lib/cone_detection/reconstructed_cone)
 Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel, /home/dl/vision_ws/devel/lib/cone_detection/conditional_removel)
 Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan, /home/dl/vision_ws/devel/lib/cone_detection/dbscan)

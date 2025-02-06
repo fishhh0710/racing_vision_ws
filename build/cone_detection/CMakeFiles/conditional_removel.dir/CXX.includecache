@@ -17,6 +17,8 @@ pcl/point_types.h
 -
 pcl/filters/crop_box.h
 -
+ros/ros.h
+/home/dl/vision_ws/src/cone_detection/src/ros/ros.h
 
 /opt/ros/noetic/include/pcl_conversions/pcl_conversions.h
 vector

@@ -139,9 +139,6 @@ void cameraCallback(const camera_lidar_fusion::LabeledPointArray msg) {
         cam_points.push_back(temp);
     }
 
-    // cam_points.emplace_back(msg->x, msg->y);
-    // ROS_INFO("Received Camera Point: (%.2f, %.2f)", msg->x, msg->y);
-    // ROS_INFO("Received Camera Point: (%d)", cam_points.size());
     ROS_INFO("Lidar points size: %zu, Camera points size: %zu", lidar_points.size(), cam_points.size());
 
 }

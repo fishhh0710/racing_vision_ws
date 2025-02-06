@@ -20,6 +20,7 @@ cone_detection
 /home/dl/vision_ws/devel/.private/cone_detection/lib/pkgconfig/cone_detection.pc /home/dl/vision_ws/devel/lib/pkgconfig/cone_detection.pc
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/cone_legality_verification /home/dl/vision_ws/devel/lib/cone_detection/cone_legality_verification
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/euclidean_clustering /home/dl/vision_ws/devel/lib/cone_detection/euclidean_clustering
+/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/pointcloud_angle_rotation /home/dl/vision_ws/devel/lib/cone_detection/pointcloud_angle_rotation
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/reconstructed_cone /home/dl/vision_ws/devel/lib/cone_detection/reconstructed_cone
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel /home/dl/vision_ws/devel/lib/cone_detection/conditional_removel
 /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan /home/dl/vision_ws/devel/lib/cone_detection/dbscan

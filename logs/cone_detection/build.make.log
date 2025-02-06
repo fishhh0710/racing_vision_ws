@@ -1,21 +1,21 @@
+[35m[1mScanning dependencies of target conditional_removel[0m
 [  0%] Built target std_msgs_generate_messages_lisp
-[  0%] Built target std_msgs_generate_messages_nodejs
-[  0%] Built target std_msgs_generate_messages_eus
-[35m[1mScanning dependencies of target dbscan[0m
 [  0%] Built target std_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_cpp
-[ 11%] Built target cone_legality_verification
-[ 22%] Built target euclidean_clustering
-[ 44%] Built target downsampling
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[ 27%] Built target dbscan
+[ 33%] Built target downsampling
+[ 33%] Built target euclidean_clustering
 [ 44%] Built target reconstructed_cone
-[ 55%] Built target conditional_removel
-[ 61%] [32mBuilding CXX object CMakeFiles/dbscan.dir/src/dbscan.cpp.o[0m
+[ 55%] Built target cone_legality_verification
+[ 61%] [32mBuilding CXX object CMakeFiles/conditional_removel.dir/src/conditional_removel.cpp.o[0m
 [ 61%] Built target _cone_detection_generate_messages_check_deps_LabeledPointArray
-[ 72%] Built target cone_detection_generate_messages_nodejs
-[ 72%] Built target cone_detection_generate_messages_lisp
+[ 66%] Built target cone_detection_generate_messages_lisp
+[ 72%] Built target cone_detection_generate_messages_cpp
 [ 83%] Built target cone_detection_generate_messages_py
 [ 94%] Built target cone_detection_generate_messages_eus
-[ 94%] Built target cone_detection_generate_messages_cpp
+[ 88%] Built target cone_detection_generate_messages_nodejs
 [ 94%] Built target cone_detection_generate_messages
-[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan[0m
-[100%] Built target dbscan
+[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel[0m
+[100%] Built target conditional_removel
