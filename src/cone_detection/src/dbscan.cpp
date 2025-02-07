@@ -30,7 +30,7 @@ int k = 50;
 #define pb push_back
 
 ros::Publisher pub;
-ros::Publisher marker_pub;
+ros::Publisher marker_pub,pos_pub;
 int maxid = 0;
 using namespace std;
 int group[6000];
@@ -86,6 +86,7 @@ double getmed(int tar){
     //         return ;
     //     }
     // }
+    return pv;
 }
 
 // 透過x,y,z med vs avg to vaildate the cone
@@ -141,19 +142,9 @@ void dbscan(const sensor_msgs::PointCloud2ConstPtr& cloud_msg){
     aa = 1.0;
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr colored_cluster(new pcl::PointCloud<pcl::PointXYZRGB>);
     pcl::PointXYZRGB point;
-    // cone_detection::LabeledPointArray ret;
     set<int> sett;
     for(int j = 0;j < cloud->points.size(); j++){
         int tt = find_p(group[j]);
-        // pcl::CentroidPoint<pcl::PointXYZ> centroid;
-        // centroid.add(cloud->points[j]);
-        // pcl::PointXYZ center;
-        // centroid.get(center);
-
-        // ret.x.pb(center.x);
-        // ret.y.pb(center.y);
-        // ret.z.pb(center.z);
-        // if(sz[tt]>120||sz[tt]<8)continue;
         auto temp = cloud->points[j];
         r = rr[tt];
         g = gg[tt];
@@ -174,15 +165,24 @@ void dbscan(const sensor_msgs::PointCloud2ConstPtr& cloud_msg){
     cluster_msg.header = cloud_msg->header;
     pub.publish(cluster_msg);
     marker_pub.publish(mk);
-    cout<<"\n";
-
+    cone_detection::LabeledPointArray ret;
     for(int i = 0;i < cloud->points.size();i++){
         int tt = find_p(group[i]);
         auto temp = sett.find(tt);
         if(temp == sett.end())continue;
         sett.erase(temp);
-    }
 
+        double xm,ym,zm;
+        xm = getmed(tt*3);
+        ym = getmed(tt*3+1);
+        zm = getmed(tt*3+2);
+        ret.x.pb(xm);
+        ret.y.pb(ym);
+        ret.z.pb(zm);
+    }
+    cout<<"[dbscan] point size = "<<ret.x.size()<<"\n";
+    pos_pub.publish(ret);
+    return ;
 }
 
 
@@ -204,6 +204,7 @@ int main(int argc, char** argv){
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/dbscan_cloud", 1);
     marker_pub = nh.advertise<visualization_msgs::MarkerArray>("/cone_marker_array_dbscan", 1);
+    pos_pub = nh.advertise<cone_detection::LabeledPointArray>("/dbscan_position",1);
 
     for(int i = 1; i < 100; i++){
         int ra = rand()%100;

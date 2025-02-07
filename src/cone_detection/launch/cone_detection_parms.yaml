@@ -1,14 +1,14 @@
 test: 1
-dbscan_eps: 0.05
-dbscan_k: 1
+dbscan_eps: 0.005 # 0.0005
+dbscan_k: 50
 
 downsampling_x_leafsize: 0.05
 downsampling_y_leafsize: 0.05
 downsampling_z_leafsize: 0.002
 
-conditional_removel_min_x: 0
-conditional_removel_max_x: 15
-conditional_removel_min_y: -10
+conditional_removel_min_x: -100 # -15
+conditional_removel_max_x: 100 # 15
+conditional_removel_min_y: -10 # -10
 conditional_removel_max_y: 300
 conditional_removel_min_z: -0.5
 conditional_removel_max_z: 0.5

@@ -62,7 +62,7 @@ class Node:
         delete_marker_array = MarkerArray()
         delete_marker = Marker()
         delete_marker.action = Marker.DELETEALL
-        delete_marker.header.frame_id = "map"
+        delete_marker.header.frame_id = "rslidar"
         delete_marker_array.markers.append(delete_marker)
 
         # 發佈 MarkerArray 來刪除 Marker
@@ -73,7 +73,7 @@ class Node:
         marker_array = MarkerArray()
         for i, (x, y) in enumerate(relative_points_2d):
             marker = Marker()
-            marker.header.frame_id = "map"
+            marker.header.frame_id = "rslidar"
             marker.header.stamp = rospy.Time.now()
             marker.ns = "projected_points"
             marker.id = i

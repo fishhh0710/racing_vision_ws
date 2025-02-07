@@ -8,6 +8,7 @@
 
 #define F first
 #define S second
+using namespace std;
 
 const double eps = 1e-7;
 //type: 1:blue 2:yellow
@@ -25,7 +26,7 @@ int maxid = 0;
 
 visualization_msgs::Marker createMarker(int id, double x, double y, int color_label) {
     visualization_msgs::Marker marker;
-    marker.header.frame_id = "map";
+    marker.header.frame_id = "rslidar";
     marker.header.stamp = ros::Time::now();
     marker.ns = "lidar_camera";
     marker.id = id; // Marker 的唯一 ID
@@ -86,7 +87,7 @@ void calculate_dis() {
                 now_ds = j;
             }
         }
-        if(abs(min_dis - 5) > eps){
+        if(abs(min_dis - 1) > eps){
             matched_pts.push_back({now_ds, i.S});
             marker_array.markers.push_back(createMarker(matched_pts.size(), now_ds.F, now_ds.S, i.S));
             maxid = std::max(maxid,(int)matched_pts.size());
@@ -112,9 +113,8 @@ void calculate_dis() {
 
 void lidarCallback(const camera_lidar_fusion::LabeledPointArray msg) {
     lidar_points.clear();
-
     for (int i = 0; i < msg.x.size(); ++i) {
-        lidar_points.emplace_back(msg.x[i], msg.y[i]);
+        lidar_points.emplace_back(-msg.y[i], msg.x[i]);
     }
     // ROS_INFO("Received %zu Lidar points", lidar_points.size());
     ROS_INFO("Lidar points size: %zu, Camera points size: %zu", lidar_points.size(), cam_points.size());
@@ -150,7 +150,7 @@ int main(int argc, char** argv) {
     pub_label = nh.advertise<camera_lidar_fusion::LabeledPointArray>("/camera_lidar_fusion/lidar_camera_pos", 1);
     
     // Subscriber
-    ros::Subscriber lidar_sub = nh.subscribe("/cone_detection", 1, lidarCallback);
+    ros::Subscriber lidar_sub = nh.subscribe("/dbscan_position", 1, lidarCallback);
     ros::Subscriber cam_sub = nh.subscribe("/yolo/objects/relative_coordinates", 1, cameraCallback);
 
     ros::Rate loop_rate(10);

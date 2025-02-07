@@ -299,7 +299,7 @@ global vehicle_direction  # 新增方向變數
 
 def create_cone_marker(cone_position, cone_id, color):
     marker = Marker()
-    marker.header.frame_id = "map"
+    marker.header.frame_id = "rslidar"
     marker.type = Marker.SPHERE
     marker.action = Marker.ADD
     marker.id = cone_id
@@ -320,7 +320,7 @@ def create_path_marker(path_points):
         rospy.loginfo(f"Path start point: x={start_point[0]}, y={start_point[1]}")
 
     marker = Marker()
-    marker.header.frame_id = "map"
+    marker.header.frame_id = "rslidar"
     marker.type = Marker.LINE_STRIP
     marker.action = Marker.ADD
     marker.id = 1000  # 假設ID 1000留給路徑
@@ -401,12 +401,12 @@ def publish_path(final_path):
     rospy.loginfo("Publishing path...")  # 添加這行來確認是否執行到這裡
     path_msg = Path()
     path_msg.header.stamp = rospy.Time.now()
-    path_msg.header.frame_id = "map"
+    path_msg.header.frame_id = "rslidar"
 
     for point in final_path:
         pose = PoseStamped()
         pose.header.stamp = rospy.Time.now()
-        pose.header.frame_id = "map"
+        pose.header.frame_id = "rslidar"
         pose.pose.position.x = point[1]  # X 座標
         pose.pose.position.y = point[2]  # Y 座標
         pose.pose.position.z = 0.0  # Z 座標為0，因為是2D路徑
@@ -428,7 +428,7 @@ def delete_previous_cone_markers(): #讓舊的點不會卡在畫面上
 
     for marker_id in previous_cone_marker_ids:
         delete_marker = Marker()
-        delete_marker.header.frame_id = "map"
+        delete_marker.header.frame_id = "rslidar"
         delete_marker.id = marker_id
         delete_marker.action = Marker.DELETE  # 設置為刪除動作
         marker_array.markers.append(delete_marker)
@@ -538,8 +538,8 @@ if __name__ == '__main__':
     mission_type = MissionTypes.autocross 
     planner = PathPlanner(mission_type)
 
-    vehicle_position = np.array([0, 0], dtype=np.float64)  # 初始車輛位置設置為 float64
-    vehicle_direction = np.array([0, 1], dtype=np.float64)  # 初始車輛方向設置為 float64
+    vehicle_position = np.array([0, 0], dtype = np.float64)  # 初始車輛位置設置為 float64
+    vehicle_direction = np.array([0, 1], dtype = np.float64)  # 初始車輛方向設置為 float64
 
     cone_sorting_input = ConeSortingInput(
         slam_cones=[],  

@@ -27,7 +27,7 @@ public:
         // Publish markers for visualization
         for (size_t i = 0; i < labels.size(); ++i) {
             visualization_msgs::Marker marker;
-            marker.header.frame_id = "map";
+            marker.header.frame_id = "rslidar";
             marker.header.stamp = ros::Time::now();
             marker.ns = "world_points";
             marker.id = i;
