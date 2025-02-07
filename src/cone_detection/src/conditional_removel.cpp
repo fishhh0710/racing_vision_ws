@@ -42,12 +42,13 @@ int main(int argc, char** argv)
     res&=nh.getParam("conditional_removel_min_x",min_x);
     res&=nh.getParam("conditional_removel_min_y",min_y);
     res&=nh.getParam("conditional_removel_min_z",min_z);
-    res&=nh.getParam("conditional_removel_max_x",min_x);
-    res&=nh.getParam("conditional_removel_max_y",min_y);
-    res&=nh.getParam("conditional_removel_max_z",min_z);
+    res&=nh.getParam("conditional_removel_max_x",max_x);
+    res&=nh.getParam("conditional_removel_max_y",max_y);
+    res&=nh.getParam("conditional_removel_max_z",max_z);
     res&=nh.getParam("conditional_source",sub_source);
 
     cout<<"[Conditional removal] Param get "<<(res?"successfully":"faild")<<"\n";
+    // cout<<"[Conditional removal]"<<min_x<<" "<<max_x<<"\n";
     
 
     ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>(sub_source, 1, cloudCallback);

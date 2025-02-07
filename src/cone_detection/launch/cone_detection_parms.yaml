@@ -6,9 +6,9 @@ downsampling_x_leafsize: 0.05
 downsampling_y_leafsize: 0.05
 downsampling_z_leafsize: 0.002
 
-conditional_removel_min_x: -12
-conditional_removel_max_x: 12
-conditional_removel_min_y: 0
+conditional_removel_min_x: 0
+conditional_removel_max_x: 15
+conditional_removel_min_y: -10
 conditional_removel_max_y: 300
 conditional_removel_min_z: -0.5
 conditional_removel_max_z: 0.5
