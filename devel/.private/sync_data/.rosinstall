@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dl/vision_ws/devel/.private/sync_data/setup.sh

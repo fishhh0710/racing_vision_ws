@@ -34,9 +34,9 @@ public:
             marker.type = visualization_msgs::Marker::MESH_RESOURCE;
             marker.mesh_resource = "package://yolo/meshes/cone.stl";
             marker.action = visualization_msgs::Marker::ADD;
-            marker.pose.position.x = x_values[i];
-            marker.pose.position.y = y_values[i];
-            marker.pose.position.z = z_values[i];
+            marker.pose.position.x = y_values[i];
+            marker.pose.position.y = -x_values[i];
+            marker.pose.position.z = 0;
             marker.pose.orientation.x = 0.0;
             marker.pose.orientation.y = 0.0;
             marker.pose.orientation.z = 0.0;

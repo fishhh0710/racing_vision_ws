@@ -145,6 +145,7 @@ void dbscan(const sensor_msgs::PointCloud2ConstPtr& cloud_msg){
     set<int> sett;
     for(int j = 0;j < cloud->points.size(); j++){
         int tt = find_p(group[j]);
+        if(sz[tt]<5||sz[tt]>80)continue;
         auto temp = cloud->points[j];
         r = rr[tt];
         g = gg[tt];

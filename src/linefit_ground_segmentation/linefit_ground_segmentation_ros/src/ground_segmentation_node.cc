@@ -5,12 +5,14 @@
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl_ros/point_cloud.h>
 #include <tf2_ros/transform_listener.h>
+#include "std_msgs/Header.h"
 
 #include "ground_segmentation/ground_segmentation.h"
 
 class SegmentationNode {
   ros::Publisher ground_pub_;
   ros::Publisher obstacle_pub_;
+  ros::Publisher time_pub_;
   tf2_ros::Buffer tf_buffer_;
   tf2_ros::TransformListener tf_listener_{tf_buffer_};
   GroundSegmentationParams params_;
@@ -64,6 +66,7 @@ public:
       if (labels[i] == 1) ground_cloud.push_back(cloud[i]);
       else obstacle_cloud.push_back(cloud[i]);
     }
+    
     ground_pub_.publish(ground_cloud);
     obstacle_pub_.publish(obstacle_cloud);
   }

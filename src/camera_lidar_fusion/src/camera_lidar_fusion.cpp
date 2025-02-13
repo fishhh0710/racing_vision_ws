@@ -114,7 +114,7 @@ void calculate_dis() {
 void lidarCallback(const camera_lidar_fusion::LabeledPointArray msg) {
     lidar_points.clear();
     for (int i = 0; i < msg.x.size(); ++i) {
-        lidar_points.emplace_back(-msg.y[i], msg.x[i]);
+        lidar_points.emplace_back(msg.x[i], msg.y[i]);
     }
     // ROS_INFO("Received %zu Lidar points", lidar_points.size());
     ROS_INFO("Lidar points size: %zu, Camera points size: %zu", lidar_points.size(), cam_points.size());

@@ -1,6 +1,5 @@
 /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles/install/strip.dir
 /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles/edit_cache.dir
-/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles/time_synchronization.dir
 /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles/camera_lidar_fusion_generate_messages_py.dir
 /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles/camera_lidar_fusion_generate_messages_nodejs.dir
 /home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles/camera_lidar_fusion_generate_messages_lisp.dir

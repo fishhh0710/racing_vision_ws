@@ -5,7 +5,7 @@
 #include <pcl/filters/crop_box.h>
 #include "ros/ros.h"
 
-ros::Publisher pub;
+ros::Publisher pub,time_pub;
 using namespace std;
 
 // 將 PCLVisualizer 的初始化移除
@@ -50,7 +50,7 @@ int main(int argc, char** argv)
     cout<<"[Conditional removal] Param get "<<(res?"successfully":"faild")<<"\n";
     // cout<<"[Conditional removal]"<<min_x<<" "<<max_x<<"\n";
     
-
+    // time_pub_ = nh.advertise<std_msgs::Header>("segmentation_header", 1, latch);
     ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>(sub_source, 1, cloudCallback);
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/field_of_view_trimming", 1);

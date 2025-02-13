@@ -9,6 +9,7 @@ import rospy
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import PointStamped
 from yolo.msg import LabeledPointArray
+import std_msgs
 
 ## Other tools
 import cv2
@@ -50,6 +51,7 @@ class Node:
         self.world_point_array_pub = rospy.Publisher("/yolo/objects/world_point_array", LabeledPointArray, queue_size=10)
         # Resized image publisher
         self.resized_image_pub = rospy.Publisher("/camera/resized_image", Image, queue_size=10)
+        self.header_pub = rospy.Publisher("/yolo_header", std_msgs.msg.Header, queue_size=10)
 
         self.world_points = []
         self.camera_point = PointStamped()
@@ -95,6 +97,7 @@ class Node:
 
     def yolo(self):
         while rospy.is_shutdown() is False:
+            self.camera_point.header.stamp = rospy.Time.now()
             if self.col1_msg is not None:
                 color_img = self.preprocess(self.col1_msg)
 
@@ -179,6 +182,7 @@ class Node:
             labeled_point_array_msg.z.append(point.point.z)
 
         self.world_point_array_pub.publish(labeled_point_array_msg)
+        self.header_pub.publish(self.camera_point.header)
         self.world_points.clear()
 
 if __name__ == '__main__':
