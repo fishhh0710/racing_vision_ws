@@ -8,9 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/dl/vision_ws/devel/.private/cone_detection:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/dl/vision_ws/devel/.private/cone_detection/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/dl/vision_ws/devel/.private/cone_detection/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/dl/vision_ws/build/cone_detection'
-export PYTHONPATH="/home/dl/vision_ws/devel/.private/cone_detection/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/dl/vision_ws/devel/.private/cone_detection/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/dl/vision_ws/src/cone_detection:$ROS_PACKAGE_PATH"

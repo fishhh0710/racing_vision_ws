@@ -2,8 +2,8 @@
 // DO NOT EDIT!
 
 
-#ifndef camera_lidar_fusion_MESSAGE_LABELEDPOINTARRAY_H
-#define camera_lidar_fusion_MESSAGE_LABELEDPOINTARRAY_H
+#ifndef CAMERA_LIDAR_FUSION_MESSAGE_LABELEDPOINTARRAY_H
+#define CAMERA_LIDAR_FUSION_MESSAGE_LABELEDPOINTARRAY_H
 
 
 #include <string>
@@ -238,4 +238,4 @@ struct Printer< ::camera_lidar_fusion::LabeledPointArray_<ContainerAllocator> >
 } // namespace message_operations
 } // namespace ros
 
-#endif // camera_lidar_fusion_MESSAGE_LABELEDPOINTARRAY_H
+#endif // CAMERA_LIDAR_FUSION_MESSAGE_LABELEDPOINTARRAY_H

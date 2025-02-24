@@ -1,1 +1,0 @@
-/home/dl/vision_ws/devel/.private/cone_detection/include/cone_detection/LabeledPointArray.h

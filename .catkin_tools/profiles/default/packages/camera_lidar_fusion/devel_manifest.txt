@@ -18,5 +18,4 @@ camera_lidar_fusion
 /home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/python3/dist-packages/camera_lidar_fusion/msg/__init__.py /home/dl/vision_ws/devel/lib/python3/dist-packages/camera_lidar_fusion/msg/__init__.py
 /home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/python3/dist-packages/camera_lidar_fusion/msg/_LabeledPointArray.py /home/dl/vision_ws/devel/lib/python3/dist-packages/camera_lidar_fusion/msg/_LabeledPointArray.py
 /home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/pkgconfig/camera_lidar_fusion.pc /home/dl/vision_ws/devel/lib/pkgconfig/camera_lidar_fusion.pc
-/home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/camera_lidar_fusion/time_synchronization /home/dl/vision_ws/devel/lib/camera_lidar_fusion/time_synchronization
 /home/dl/vision_ws/devel/.private/camera_lidar_fusion/lib/camera_lidar_fusion/camera_lidar_fusion /home/dl/vision_ws/devel/lib/camera_lidar_fusion/camera_lidar_fusion

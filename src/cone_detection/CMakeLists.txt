@@ -14,22 +14,21 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
-  message_generation
-  visualization_msgs
+  yolo
 )
 find_package(PCL REQUIRED)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  LabeledPointArray.msg
-)
+# add_message_files(
+#   FILES
+#   LabeledPointArray.msg
+# )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs  # Or other packages containing msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs  # Or other packages containing msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -64,7 +63,6 @@ catkin_package(
   INCLUDE_DIRS src
   LIBRARIES cone_detection
   CATKIN_DEPENDS pcl_conversions pcl_msgs pcl_ros roscpp sensor_msgs
-  DEPENDS system_lib
 )
 
 include_directories(

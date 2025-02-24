@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(cone_detection_EXPORTED_TARGETS "cone_detection_generate_messages_cpp;cone_detection_generate_messages_eus;cone_detection_generate_messages_lisp;cone_detection_generate_messages_nodejs;cone_detection_generate_messages_py")
+set(cone_detection_EXPORTED_TARGETS "")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${cone_detection_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   _list_append_deduplicate(cone_detection_EXPORTED_TARGETS ${${cone_detection_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "cone_detection-msg-extras.cmake")
+set(pkg_cfg_extras "")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${cone_detection_DIR}/${extra})

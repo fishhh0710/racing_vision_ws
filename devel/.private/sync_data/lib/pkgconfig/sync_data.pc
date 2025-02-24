@@ -1,8 +1,0 @@
-prefix=/home/dl/vision_ws/devel/.private/sync_data
-
-Name: sync_data
-Description: Description of sync_data
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

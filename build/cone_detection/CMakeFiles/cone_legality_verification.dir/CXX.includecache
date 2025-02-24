@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dl/vision_ws/devel/.private/cone_detection/include/cone_detection/LabeledPointArray.h
+/home/dl/vision_ws/devel/.private/yolo/include/yolo/LabeledPointArray.h
 string
 -
 vector
@@ -49,8 +49,8 @@ visualization_msgs/Marker.h
 -
 visualization_msgs/MarkerArray.h
 -
-cone_detection/LabeledPointArray.h
-/home/dl/vision_ws/src/cone_detection/src/cone_detection/LabeledPointArray.h
+yolo/LabeledPointArray.h
+/home/dl/vision_ws/src/cone_detection/src/yolo/LabeledPointArray.h
 std_msgs/Header.h
 /home/dl/vision_ws/src/cone_detection/src/std_msgs/Header.h
 

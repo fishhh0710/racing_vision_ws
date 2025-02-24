@@ -3,6 +3,6 @@ prefix=/home/dl/vision_ws/devel/.private/cone_detection
 Name: cone_detection
 Description: Description of cone_detection
 Version: 0.0.0
-Cflags: -I/home/dl/vision_ws/devel/.private/cone_detection/include -I/home/dl/vision_ws/src/cone_detection/src
+Cflags: -I/home/dl/vision_ws/src/cone_detection/src
 Libs: -L${prefix}/lib -lcone_detection
 Requires: pcl_conversions pcl_msgs pcl_ros roscpp sensor_msgs

@@ -55,7 +55,6 @@ CMAKE_BINARY_DIR = /home/dl/vision_ws/build/cone_detection
 # The main recursive "all" target.
 all: CMakeFiles/cone_legality_verification.dir/all
 all: CMakeFiles/conditional_removel.dir/all
-all: CMakeFiles/cone_detection_generate_messages.dir/all
 all: CMakeFiles/euclidean_clustering.dir/all
 all: CMakeFiles/reconstructed_cone.dir/all
 all: CMakeFiles/downsampling.dir/all
@@ -71,18 +70,10 @@ preinstall: gtest/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/cone_legality_verification.dir/clean
+clean: CMakeFiles/yolo_generate_messages_py.dir/clean
+clean: CMakeFiles/yolo_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/conditional_removel.dir/clean
-clean: CMakeFiles/cone_detection_generate_messages_py.dir/clean
-clean: CMakeFiles/cone_detection_gennodejs.dir/clean
-clean: CMakeFiles/cone_detection_generate_messages_nodejs.dir/clean
-clean: CMakeFiles/cone_detection_genlisp.dir/clean
-clean: CMakeFiles/cone_detection_geneus.dir/clean
-clean: CMakeFiles/cone_detection_generate_messages_eus.dir/clean
-clean: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/clean
-clean: CMakeFiles/cone_detection_generate_messages.dir/clean
-clean: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/clean
-clean: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
-clean: CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
+clean: CMakeFiles/yolo_generate_messages_eus.dir/clean
 clean: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/actionlib_msgs_generate_messages_py.dir/clean
@@ -92,14 +83,12 @@ clean: CMakeFiles/euclidean_clustering.dir/clean
 clean: CMakeFiles/actionlib_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/actionlib_generate_messages_cpp.dir/clean
 clean: CMakeFiles/tf_generate_messages_nodejs.dir/clean
-clean: CMakeFiles/cone_detection_generate_messages_cpp.dir/clean
 clean: CMakeFiles/tf_generate_messages_lisp.dir/clean
 clean: CMakeFiles/reconstructed_cone.dir/clean
 clean: CMakeFiles/tf_generate_messages_cpp.dir/clean
 clean: CMakeFiles/topic_tools_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/topic_tools_generate_messages_lisp.dir/clean
 clean: CMakeFiles/topic_tools_generate_messages_eus.dir/clean
-clean: CMakeFiles/cone_detection_generate_messages_lisp.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_eus.dir/clean
 clean: CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
 clean: CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
@@ -108,6 +97,7 @@ clean: CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/nodelet_generate_messages_lisp.dir/clean
 clean: CMakeFiles/actionlib_generate_messages_lisp.dir/clean
 clean: CMakeFiles/clean_test_results.dir/clean
+clean: CMakeFiles/yolo_generate_messages_cpp.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 clean: CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/clean
@@ -128,6 +118,7 @@ clean: CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 clean: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/dbscan.dir/clean
 clean: CMakeFiles/pcl_msgs_generate_messages_cpp.dir/clean
+clean: CMakeFiles/yolo_generate_messages_lisp.dir/clean
 clean: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 clean: CMakeFiles/std_msgs_generate_messages_py.dir/clean
 clean: CMakeFiles/topic_tools_generate_messages_py.dir/clean
@@ -140,14 +131,11 @@ clean: CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
 clean: CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/bond_generate_messages_cpp.dir/clean
 clean: CMakeFiles/bond_generate_messages_eus.dir/clean
-clean: CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
 clean: CMakeFiles/nodelet_topic_tools_gencfg.dir/clean
 clean: CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 clean: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-clean: CMakeFiles/cone_detection_gencpp.dir/clean
 clean: CMakeFiles/bond_generate_messages_lisp.dir/clean
 clean: CMakeFiles/pcl_msgs_generate_messages_eus.dir/clean
-clean: CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
 clean: CMakeFiles/topic_tools_generate_messages_cpp.dir/clean
 clean: CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/pcl_msgs_generate_messages_lisp.dir/clean
@@ -158,7 +146,6 @@ clean: CMakeFiles/actionlib_generate_messages_eus.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 clean: CMakeFiles/std_srvs_generate_messages_py.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-clean: CMakeFiles/cone_detection_genpy.dir/clean
 clean: CMakeFiles/pcl_ros_gencfg.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/clean
@@ -244,7 +231,7 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 CMakeFiles/cone_legality_verification.dir/all:
 	$(MAKE) -f CMakeFiles/cone_legality_verification.dir/build.make CMakeFiles/cone_legality_verification.dir/depend
 	$(MAKE) -f CMakeFiles/cone_legality_verification.dir/build.make CMakeFiles/cone_legality_verification.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=9,10 "Built target cone_legality_verification"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=3,4 "Built target cone_legality_verification"
 .PHONY : CMakeFiles/cone_legality_verification.dir/all
 
 # Build rule for subdir invocation for target.
@@ -263,6 +250,60 @@ cone_legality_verification: CMakeFiles/cone_legality_verification.dir/rule
 CMakeFiles/cone_legality_verification.dir/clean:
 	$(MAKE) -f CMakeFiles/cone_legality_verification.dir/build.make CMakeFiles/cone_legality_verification.dir/clean
 .PHONY : CMakeFiles/cone_legality_verification.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/yolo_generate_messages_py.dir
+
+# All Build rule for target.
+CMakeFiles/yolo_generate_messages_py.dir/all:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_py.dir/build.make CMakeFiles/yolo_generate_messages_py.dir/depend
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_py.dir/build.make CMakeFiles/yolo_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target yolo_generate_messages_py"
+.PHONY : CMakeFiles/yolo_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/yolo_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/yolo_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+.PHONY : CMakeFiles/yolo_generate_messages_py.dir/rule
+
+# Convenience name for target.
+yolo_generate_messages_py: CMakeFiles/yolo_generate_messages_py.dir/rule
+
+.PHONY : yolo_generate_messages_py
+
+# clean rule for target.
+CMakeFiles/yolo_generate_messages_py.dir/clean:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_py.dir/build.make CMakeFiles/yolo_generate_messages_py.dir/clean
+.PHONY : CMakeFiles/yolo_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/yolo_generate_messages_nodejs.dir
+
+# All Build rule for target.
+CMakeFiles/yolo_generate_messages_nodejs.dir/all:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_nodejs.dir/build.make CMakeFiles/yolo_generate_messages_nodejs.dir/depend
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_nodejs.dir/build.make CMakeFiles/yolo_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target yolo_generate_messages_nodejs"
+.PHONY : CMakeFiles/yolo_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/yolo_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/yolo_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+.PHONY : CMakeFiles/yolo_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+yolo_generate_messages_nodejs: CMakeFiles/yolo_generate_messages_nodejs.dir/rule
+
+.PHONY : yolo_generate_messages_nodejs
+
+# clean rule for target.
+CMakeFiles/yolo_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_nodejs.dir/build.make CMakeFiles/yolo_generate_messages_nodejs.dir/clean
+.PHONY : CMakeFiles/yolo_generate_messages_nodejs.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/conditional_removel.dir
@@ -292,308 +333,31 @@ CMakeFiles/conditional_removel.dir/clean:
 .PHONY : CMakeFiles/conditional_removel.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cone_detection_generate_messages_py.dir
+# Target rules for target CMakeFiles/yolo_generate_messages_eus.dir
 
 # All Build rule for target.
-CMakeFiles/cone_detection_generate_messages_py.dir/all: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-CMakeFiles/cone_detection_generate_messages_py.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_py.dir/build.make CMakeFiles/cone_detection_generate_messages_py.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_py.dir/build.make CMakeFiles/cone_detection_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=7,8 "Built target cone_detection_generate_messages_py"
-.PHONY : CMakeFiles/cone_detection_generate_messages_py.dir/all
+CMakeFiles/yolo_generate_messages_eus.dir/all:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_eus.dir/build.make CMakeFiles/yolo_generate_messages_eus.dir/depend
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_eus.dir/build.make CMakeFiles/yolo_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target yolo_generate_messages_eus"
+.PHONY : CMakeFiles/yolo_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_generate_messages_py.dir/all
+CMakeFiles/yolo_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_generate_messages_py.dir/rule
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/yolo_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+.PHONY : CMakeFiles/yolo_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-cone_detection_generate_messages_py: CMakeFiles/cone_detection_generate_messages_py.dir/rule
+yolo_generate_messages_eus: CMakeFiles/yolo_generate_messages_eus.dir/rule
 
-.PHONY : cone_detection_generate_messages_py
-
-# clean rule for target.
-CMakeFiles/cone_detection_generate_messages_py.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_py.dir/build.make CMakeFiles/cone_detection_generate_messages_py.dir/clean
-.PHONY : CMakeFiles/cone_detection_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_gennodejs.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_gennodejs.dir/all: CMakeFiles/cone_detection_generate_messages_nodejs.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_gennodejs.dir/build.make CMakeFiles/cone_detection_gennodejs.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_gennodejs.dir/build.make CMakeFiles/cone_detection_gennodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_gennodejs"
-.PHONY : CMakeFiles/cone_detection_gennodejs.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_gennodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_gennodejs.dir/rule
-
-# Convenience name for target.
-cone_detection_gennodejs: CMakeFiles/cone_detection_gennodejs.dir/rule
-
-.PHONY : cone_detection_gennodejs
+.PHONY : yolo_generate_messages_eus
 
 # clean rule for target.
-CMakeFiles/cone_detection_gennodejs.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_gennodejs.dir/build.make CMakeFiles/cone_detection_gennodejs.dir/clean
-.PHONY : CMakeFiles/cone_detection_gennodejs.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_generate_messages_nodejs.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_generate_messages_nodejs.dir/all: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-CMakeFiles/cone_detection_generate_messages_nodejs.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_nodejs.dir/build.make CMakeFiles/cone_detection_generate_messages_nodejs.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_nodejs.dir/build.make CMakeFiles/cone_detection_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=6 "Built target cone_detection_generate_messages_nodejs"
-.PHONY : CMakeFiles/cone_detection_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-cone_detection_generate_messages_nodejs: CMakeFiles/cone_detection_generate_messages_nodejs.dir/rule
-
-.PHONY : cone_detection_generate_messages_nodejs
-
-# clean rule for target.
-CMakeFiles/cone_detection_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_nodejs.dir/build.make CMakeFiles/cone_detection_generate_messages_nodejs.dir/clean
-.PHONY : CMakeFiles/cone_detection_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_genlisp.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_genlisp.dir/all: CMakeFiles/cone_detection_generate_messages_lisp.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_genlisp.dir/build.make CMakeFiles/cone_detection_genlisp.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_genlisp.dir/build.make CMakeFiles/cone_detection_genlisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_genlisp"
-.PHONY : CMakeFiles/cone_detection_genlisp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_genlisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_genlisp.dir/rule
-
-# Convenience name for target.
-cone_detection_genlisp: CMakeFiles/cone_detection_genlisp.dir/rule
-
-.PHONY : cone_detection_genlisp
-
-# clean rule for target.
-CMakeFiles/cone_detection_genlisp.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_genlisp.dir/build.make CMakeFiles/cone_detection_genlisp.dir/clean
-.PHONY : CMakeFiles/cone_detection_genlisp.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_geneus.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_geneus.dir/all: CMakeFiles/cone_detection_generate_messages_eus.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_geneus.dir/build.make CMakeFiles/cone_detection_geneus.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_geneus.dir/build.make CMakeFiles/cone_detection_geneus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_geneus"
-.PHONY : CMakeFiles/cone_detection_geneus.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_geneus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_geneus.dir/rule
-
-# Convenience name for target.
-cone_detection_geneus: CMakeFiles/cone_detection_geneus.dir/rule
-
-.PHONY : cone_detection_geneus
-
-# clean rule for target.
-CMakeFiles/cone_detection_geneus.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_geneus.dir/build.make CMakeFiles/cone_detection_geneus.dir/clean
-.PHONY : CMakeFiles/cone_detection_geneus.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_generate_messages_eus.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_generate_messages_eus.dir/all: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-CMakeFiles/cone_detection_generate_messages_eus.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_eus.dir/build.make CMakeFiles/cone_detection_generate_messages_eus.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_eus.dir/build.make CMakeFiles/cone_detection_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=3,4 "Built target cone_detection_generate_messages_eus"
-.PHONY : CMakeFiles/cone_detection_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-cone_detection_generate_messages_eus: CMakeFiles/cone_detection_generate_messages_eus.dir/rule
-
-.PHONY : cone_detection_generate_messages_eus
-
-# clean rule for target.
-CMakeFiles/cone_detection_generate_messages_eus.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_eus.dir/build.make CMakeFiles/cone_detection_generate_messages_eus.dir/clean
-.PHONY : CMakeFiles/cone_detection_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir
-
-# All Build rule for target.
-CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all:
-	$(MAKE) -f CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/build.make CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/depend
-	$(MAKE) -f CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/build.make CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target _cone_detection_generate_messages_check_deps_LabeledPointArray"
-.PHONY : CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/rule
-
-# Convenience name for target.
-_cone_detection_generate_messages_check_deps_LabeledPointArray: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/rule
-
-.PHONY : _cone_detection_generate_messages_check_deps_LabeledPointArray
-
-# clean rule for target.
-CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/clean:
-	$(MAKE) -f CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/build.make CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/clean
-.PHONY : CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_generate_messages.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_generate_messages.dir/all: CMakeFiles/cone_detection_generate_messages_py.dir/all
-CMakeFiles/cone_detection_generate_messages.dir/all: CMakeFiles/cone_detection_generate_messages_nodejs.dir/all
-CMakeFiles/cone_detection_generate_messages.dir/all: CMakeFiles/cone_detection_generate_messages_eus.dir/all
-CMakeFiles/cone_detection_generate_messages.dir/all: CMakeFiles/cone_detection_generate_messages_cpp.dir/all
-CMakeFiles/cone_detection_generate_messages.dir/all: CMakeFiles/cone_detection_generate_messages_lisp.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages.dir/build.make CMakeFiles/cone_detection_generate_messages.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages.dir/build.make CMakeFiles/cone_detection_generate_messages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_generate_messages"
-.PHONY : CMakeFiles/cone_detection_generate_messages.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_generate_messages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_generate_messages.dir/rule
-
-# Convenience name for target.
-cone_detection_generate_messages: CMakeFiles/cone_detection_generate_messages.dir/rule
-
-.PHONY : cone_detection_generate_messages
-
-# clean rule for target.
-CMakeFiles/cone_detection_generate_messages.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages.dir/build.make CMakeFiles/cone_detection_generate_messages.dir/clean
-.PHONY : CMakeFiles/cone_detection_generate_messages.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/visualization_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target visualization_msgs_generate_messages_nodejs"
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_nodejs: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_nodejs
-
-# clean rule for target.
-CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/clean
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/visualization_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make CMakeFiles/visualization_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target visualization_msgs_generate_messages_lisp"
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# clean rule for target.
-CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/visualization_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-CMakeFiles/visualization_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make CMakeFiles/visualization_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target visualization_msgs_generate_messages_eus"
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_eus: CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_eus
-
-# clean rule for target.
-CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
+CMakeFiles/yolo_generate_messages_eus.dir/clean:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_eus.dir/build.make CMakeFiles/yolo_generate_messages_eus.dir/clean
+.PHONY : CMakeFiles/yolo_generate_messages_eus.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/tf2_msgs_generate_messages_nodejs.dir
@@ -737,7 +501,7 @@ CMakeFiles/actionlib_generate_messages_py.dir/clean:
 CMakeFiles/euclidean_clustering.dir/all:
 	$(MAKE) -f CMakeFiles/euclidean_clustering.dir/build.make CMakeFiles/euclidean_clustering.dir/depend
 	$(MAKE) -f CMakeFiles/euclidean_clustering.dir/build.make CMakeFiles/euclidean_clustering.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=15,16 "Built target euclidean_clustering"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=9,10 "Built target euclidean_clustering"
 .PHONY : CMakeFiles/euclidean_clustering.dir/all
 
 # Build rule for subdir invocation for target.
@@ -839,34 +603,6 @@ CMakeFiles/tf_generate_messages_nodejs.dir/clean:
 .PHONY : CMakeFiles/tf_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cone_detection_generate_messages_cpp.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_generate_messages_cpp.dir/all: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-CMakeFiles/cone_detection_generate_messages_cpp.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_cpp.dir/build.make CMakeFiles/cone_detection_generate_messages_cpp.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_cpp.dir/build.make CMakeFiles/cone_detection_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_generate_messages_cpp"
-.PHONY : CMakeFiles/cone_detection_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-cone_detection_generate_messages_cpp: CMakeFiles/cone_detection_generate_messages_cpp.dir/rule
-
-.PHONY : cone_detection_generate_messages_cpp
-
-# clean rule for target.
-CMakeFiles/cone_detection_generate_messages_cpp.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_cpp.dir/build.make CMakeFiles/cone_detection_generate_messages_cpp.dir/clean
-.PHONY : CMakeFiles/cone_detection_generate_messages_cpp.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/tf_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -900,7 +636,7 @@ CMakeFiles/tf_generate_messages_lisp.dir/clean:
 CMakeFiles/reconstructed_cone.dir/all:
 	$(MAKE) -f CMakeFiles/reconstructed_cone.dir/build.make CMakeFiles/reconstructed_cone.dir/depend
 	$(MAKE) -f CMakeFiles/reconstructed_cone.dir/build.make CMakeFiles/reconstructed_cone.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=25,26 "Built target reconstructed_cone"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=19,20 "Built target reconstructed_cone"
 .PHONY : CMakeFiles/reconstructed_cone.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1027,34 +763,6 @@ topic_tools_generate_messages_eus: CMakeFiles/topic_tools_generate_messages_eus.
 CMakeFiles/topic_tools_generate_messages_eus.dir/clean:
 	$(MAKE) -f CMakeFiles/topic_tools_generate_messages_eus.dir/build.make CMakeFiles/topic_tools_generate_messages_eus.dir/clean
 .PHONY : CMakeFiles/topic_tools_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_generate_messages_lisp.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_generate_messages_lisp.dir/all: CMakeFiles/_cone_detection_generate_messages_check_deps_LabeledPointArray.dir/all
-CMakeFiles/cone_detection_generate_messages_lisp.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_lisp.dir/build.make CMakeFiles/cone_detection_generate_messages_lisp.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_lisp.dir/build.make CMakeFiles/cone_detection_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=5 "Built target cone_detection_generate_messages_lisp"
-.PHONY : CMakeFiles/cone_detection_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-cone_detection_generate_messages_lisp: CMakeFiles/cone_detection_generate_messages_lisp.dir/rule
-
-.PHONY : cone_detection_generate_messages_lisp
-
-# clean rule for target.
-CMakeFiles/cone_detection_generate_messages_lisp.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_generate_messages_lisp.dir/build.make CMakeFiles/cone_detection_generate_messages_lisp.dir/clean
-.PHONY : CMakeFiles/cone_detection_generate_messages_lisp.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/roscpp_generate_messages_eus.dir
@@ -1273,6 +981,33 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/yolo_generate_messages_cpp.dir
+
+# All Build rule for target.
+CMakeFiles/yolo_generate_messages_cpp.dir/all:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_cpp.dir/build.make CMakeFiles/yolo_generate_messages_cpp.dir/depend
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_cpp.dir/build.make CMakeFiles/yolo_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target yolo_generate_messages_cpp"
+.PHONY : CMakeFiles/yolo_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/yolo_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/yolo_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+.PHONY : CMakeFiles/yolo_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+yolo_generate_messages_cpp: CMakeFiles/yolo_generate_messages_cpp.dir/rule
+
+.PHONY : yolo_generate_messages_cpp
+
+# clean rule for target.
+CMakeFiles/yolo_generate_messages_cpp.dir/clean:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_cpp.dir/build.make CMakeFiles/yolo_generate_messages_cpp.dir/clean
+.PHONY : CMakeFiles/yolo_generate_messages_cpp.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/roscpp_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -1441,7 +1176,7 @@ CMakeFiles/run_tests.dir/clean:
 CMakeFiles/downsampling.dir/all:
 	$(MAKE) -f CMakeFiles/downsampling.dir/build.make CMakeFiles/downsampling.dir/depend
 	$(MAKE) -f CMakeFiles/downsampling.dir/build.make CMakeFiles/downsampling.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=13,14 "Built target downsampling"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=7,8 "Built target downsampling"
 .PHONY : CMakeFiles/downsampling.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1765,7 +1500,7 @@ CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
 CMakeFiles/dbscan.dir/all:
 	$(MAKE) -f CMakeFiles/dbscan.dir/build.make CMakeFiles/dbscan.dir/depend
 	$(MAKE) -f CMakeFiles/dbscan.dir/build.make CMakeFiles/dbscan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=11,12 "Built target dbscan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=5,6 "Built target dbscan"
 .PHONY : CMakeFiles/dbscan.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1811,6 +1546,33 @@ pcl_msgs_generate_messages_cpp: CMakeFiles/pcl_msgs_generate_messages_cpp.dir/ru
 CMakeFiles/pcl_msgs_generate_messages_cpp.dir/clean:
 	$(MAKE) -f CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build.make CMakeFiles/pcl_msgs_generate_messages_cpp.dir/clean
 .PHONY : CMakeFiles/pcl_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/yolo_generate_messages_lisp.dir
+
+# All Build rule for target.
+CMakeFiles/yolo_generate_messages_lisp.dir/all:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_lisp.dir/build.make CMakeFiles/yolo_generate_messages_lisp.dir/depend
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_lisp.dir/build.make CMakeFiles/yolo_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target yolo_generate_messages_lisp"
+.PHONY : CMakeFiles/yolo_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/yolo_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/yolo_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
+.PHONY : CMakeFiles/yolo_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+yolo_generate_messages_lisp: CMakeFiles/yolo_generate_messages_lisp.dir/rule
+
+.PHONY : yolo_generate_messages_lisp
+
+# clean rule for target.
+CMakeFiles/yolo_generate_messages_lisp.dir/clean:
+	$(MAKE) -f CMakeFiles/yolo_generate_messages_lisp.dir/build.make CMakeFiles/yolo_generate_messages_lisp.dir/clean
+.PHONY : CMakeFiles/yolo_generate_messages_lisp.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sensor_msgs_generate_messages_cpp.dir
@@ -2137,33 +1899,6 @@ CMakeFiles/bond_generate_messages_eus.dir/clean:
 .PHONY : CMakeFiles/bond_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/visualization_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make CMakeFiles/visualization_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target visualization_msgs_generate_messages_cpp"
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_cpp: CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_cpp
-
-# clean rule for target.
-CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/nodelet_topic_tools_gencfg.dir
 
 # All Build rule for target.
@@ -2245,33 +1980,6 @@ CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
 .PHONY : CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cone_detection_gencpp.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_gencpp.dir/all: CMakeFiles/cone_detection_generate_messages_cpp.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_gencpp.dir/build.make CMakeFiles/cone_detection_gencpp.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_gencpp.dir/build.make CMakeFiles/cone_detection_gencpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_gencpp"
-.PHONY : CMakeFiles/cone_detection_gencpp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_gencpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_gencpp.dir/rule
-
-# Convenience name for target.
-cone_detection_gencpp: CMakeFiles/cone_detection_gencpp.dir/rule
-
-.PHONY : cone_detection_gencpp
-
-# clean rule for target.
-CMakeFiles/cone_detection_gencpp.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_gencpp.dir/build.make CMakeFiles/cone_detection_gencpp.dir/clean
-.PHONY : CMakeFiles/cone_detection_gencpp.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/bond_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -2324,33 +2032,6 @@ pcl_msgs_generate_messages_eus: CMakeFiles/pcl_msgs_generate_messages_eus.dir/ru
 CMakeFiles/pcl_msgs_generate_messages_eus.dir/clean:
 	$(MAKE) -f CMakeFiles/pcl_msgs_generate_messages_eus.dir/build.make CMakeFiles/pcl_msgs_generate_messages_eus.dir/clean
 .PHONY : CMakeFiles/pcl_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/visualization_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-CMakeFiles/visualization_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make CMakeFiles/visualization_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make CMakeFiles/visualization_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target visualization_msgs_generate_messages_py"
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/visualization_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_py: CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_py
-
-# clean rule for target.
-CMakeFiles/visualization_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
-.PHONY : CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/topic_tools_generate_messages_cpp.dir
@@ -2621,33 +2302,6 @@ rosgraph_msgs_generate_messages_eus: CMakeFiles/rosgraph_msgs_generate_messages_
 CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
 	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 .PHONY : CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/cone_detection_genpy.dir
-
-# All Build rule for target.
-CMakeFiles/cone_detection_genpy.dir/all: CMakeFiles/cone_detection_generate_messages_py.dir/all
-	$(MAKE) -f CMakeFiles/cone_detection_genpy.dir/build.make CMakeFiles/cone_detection_genpy.dir/depend
-	$(MAKE) -f CMakeFiles/cone_detection_genpy.dir/build.make CMakeFiles/cone_detection_genpy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num= "Built target cone_detection_genpy"
-.PHONY : CMakeFiles/cone_detection_genpy.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cone_detection_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cone_detection_genpy.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dl/vision_ws/build/cone_detection/CMakeFiles 0
-.PHONY : CMakeFiles/cone_detection_genpy.dir/rule
-
-# Convenience name for target.
-cone_detection_genpy: CMakeFiles/cone_detection_genpy.dir/rule
-
-.PHONY : cone_detection_genpy
-
-# clean rule for target.
-CMakeFiles/cone_detection_genpy.dir/clean:
-	$(MAKE) -f CMakeFiles/cone_detection_genpy.dir/build.make CMakeFiles/cone_detection_genpy.dir/clean
-.PHONY : CMakeFiles/cone_detection_genpy.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/pcl_ros_gencfg.dir
@@ -3116,7 +2770,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=19,20 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=13,14 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3143,7 +2797,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=17,18 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=11,12 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3170,7 +2824,7 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=23,24 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=17,18 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3197,7 +2851,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=21,22 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/cone_detection/CMakeFiles --progress-num=15,16 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.

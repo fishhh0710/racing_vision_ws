@@ -11,7 +11,7 @@
 #include <pcl/common/centroid.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
-#include "cone_detection/LabeledPointArray.h"
+#include "yolo/LabeledPointArray.h"
 #include "std_msgs/Header.h"
 
 
@@ -55,7 +55,7 @@ void coneReconstruction(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     visualization_msgs::MarkerArray marker_array;
     sensor_msgs::PointCloud2 cluster_msg;
 
-    cone_detection::LabeledPointArray ret;
+    yolo::LabeledPointArray ret;
 
 
     for (const auto& indices : cluster_indices){
@@ -122,7 +122,7 @@ int main(int argc, char** argv){
     std::cout<<"start cone detection...\n";
     ros::Subscriber sub = nh.subscribe<sensor_msgs::PointCloud2>("/ground_segmentation/obstacle_cloud", 1, coneReconstruction);
 
-    pub = nh.advertise<cone_detection::LabeledPointArray>("/cone_detection", 1);
+    pub = nh.advertise<yolo::LabeledPointArray>("/cone_detection", 1);
     marker_pub = nh.advertise<visualization_msgs::MarkerArray>("/cone_marker_array", 1);
     test_marker_pub = nh.advertise<visualization_msgs::Marker>("/test_cone_marker_array", 1);
 

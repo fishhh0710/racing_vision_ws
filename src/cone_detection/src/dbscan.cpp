@@ -10,7 +10,7 @@
 #include <pcl/common/centroid.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
-#include "cone_detection/LabeledPointArray.h"
+#include "yolo/LabeledPointArray.h"
 #include "std_msgs/Header.h"
 #include "pcl/kdtree/kdtree_flann.h"
 #include "random"
@@ -166,7 +166,7 @@ void dbscan(const sensor_msgs::PointCloud2ConstPtr& cloud_msg){
     cluster_msg.header = cloud_msg->header;
     pub.publish(cluster_msg);
     marker_pub.publish(mk);
-    cone_detection::LabeledPointArray ret;
+    yolo::LabeledPointArray ret;
     for(int i = 0;i < cloud->points.size();i++){
         int tt = find_p(group[i]);
         auto temp = sett.find(tt);
@@ -205,7 +205,7 @@ int main(int argc, char** argv){
 
     pub = nh.advertise<sensor_msgs::PointCloud2>("/dbscan_cloud", 1);
     marker_pub = nh.advertise<visualization_msgs::MarkerArray>("/cone_marker_array_dbscan", 1);
-    pos_pub = nh.advertise<cone_detection::LabeledPointArray>("/dbscan_position",1);
+    pos_pub = nh.advertise<yolo::LabeledPointArray>("/dbscan_position",1);
 
     for(int i = 1; i < 100; i++){
         int ra = rand()%100;

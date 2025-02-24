@@ -21,4 +21,5 @@ fs-racing-yolo/src/yolo
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/cone_marker /home/dl/vision_ws/devel/lib/yolo/cone_marker
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/cmake.lock /home/dl/vision_ws/devel/lib/yolo/cmake.lock
 /home/dl/vision_ws/devel/.private/yolo/lib/yolo/tf_broadcaster /home/dl/vision_ws/devel/lib/yolo/tf_broadcaster
+/home/dl/vision_ws/devel/.private/yolo/lib/yolo/yolo_dual.py /home/dl/vision_ws/devel/lib/yolo/yolo_dual.py
 /home/dl/vision_ws/devel/.private/yolo/lib/pkgconfig/yolo.pc /home/dl/vision_ws/devel/lib/pkgconfig/yolo.pc

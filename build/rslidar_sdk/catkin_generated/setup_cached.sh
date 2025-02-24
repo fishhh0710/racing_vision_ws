@@ -9,5 +9,6 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/dl/vision_ws/devel/.private/rslidar_sdk:$CMAKE_PREFIX_PATH"
 export PWD='/home/dl/vision_ws/build/rslidar_sdk'
+export PYTHONPATH="/home/dl/vision_ws/devel/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/dl/vision_ws/devel/.private/rslidar_sdk/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/dl/vision_ws/src/rslidar_sdk:$ROS_PACKAGE_PATH"
