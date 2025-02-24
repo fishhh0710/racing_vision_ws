@@ -34,165 +34,43 @@ CONE_LEN = 0.3  # m
 RESIZED_WIDTH = 640
 RESIZED_HEIGHT = 480
 
-class Node:
-    def __init__(self,side):
-        rospy.init_node("yolo_cam",anonymous=True)
+model = YOLO(WEIGHT_PATH)
+bridge = CvBridge()
+yolo_result_pub_l = rospy.Publisher("/yolo/objects/yolo_result_left", Image, queue_size=10)
+world_point_array_pub_l = rospy.Publisher("/yolo/objects/world_point_array_left", LabeledPointArray, queue_size=10)
+yolo_result_pub_r = rospy.Publisher("/yolo/objects/yolo_result_right", Image, queue_size=10)
+world_point_array_pub_r = rospy.Publisher("/yolo/objects/world_point_array_right", LabeledPointArray, queue_size=10)
 
-        ### YOLO model ###
-        self.model = YOLO(WEIGHT_PATH)
-        self.results_img = None
-        self.yolo_thread_started = False
-        self.side = side
+def call_back_left(cb_data):
+    # left_img = cb_data
+    yolo_proc(cb_data,1)
 
-        ### Publisher ###
-        # GUI Publisher
-        self.yolo_result_pub = rospy.Publisher("/yolo/objects/yolo_result_"+side, Image, queue_size=10)
-        # Camera Point Publisher
-        self.world_point_array_pub = rospy.Publisher("/yolo/objects/world_point_array_"+side, LabeledPointArray, queue_size=10)
-        # Resized image publisher
-        self.resized_image_pub = rospy.Publisher("/camera/resized_image", Image, queue_size=10)
-        self.header_pub = rospy.Publisher("/yolo_header", std_msgs.msg.Header, queue_size=10)
+def call_back_right(cb_data):
+    # right_img = cb_data
+    yolo_proc(cb_data,0)
 
-        self.world_points = []
-        self.camera_point = PointStamped()
-        self.camera_point.header.frame_id = "tiscamera"
-        self.camera_point.header.stamp = rospy.Time.now()
+def yolo_proc(proimg,lr):
+    high_res_image = bridge.imgmsg_to_cv2(proimg, "bgr8")
+    low_res_image = cv2.resize(high_res_image, (RESIZED_WIDTH, RESIZED_HEIGHT))
+    
+    low_res_image = cv2.flip(low_res_image,0)
+    result = model.predict(low_res_image,verbose = VERBOSE)
+    res_img = result[0].plot()
+    if(lr==1):
+        yolo_result_pub_l.publish(bridge.cv2_to_imgmsg(res_img, encoding="bgr8"))
+    else:
+        yolo_result_pub_r.publish(bridge.cv2_to_imgmsg(res_img, encoding="bgr8"))
 
-        ### Subscriber ###
-        self.col1_msg = None
-        # self.sub_col1 = rospy.Subscriber("/usb_cam/image_raw", Image, self.col_callback1)
-        self.sub_col1 = rospy.Subscriber("/camera/image_raw_"+side, Image, self.col_callback)
+def process():
+    rospy.init_node("dual_yolo_node")
+    rospy.Subscriber('/camera/image_raw_left',Image,call_back_left)
+    rospy.Subscriber('/camera/image_raw_right',Image,call_back_right)
+    rospy.spin()
 
-        ### Other tools ###
-        # CvBridge
-        self.bridge = CvBridge()
-        # tf_listener
-        self.tf_buffer = tf.Buffer()
-        self.tf_listener = tf.TransformListener(self.tf_buffer)
-        rospy.spin()
 
-    def col_callback(self, msg):
-        try:
-            # Convert ROS Image to OpenCV image
-            high_res_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
-
-            # Resize image
-            low_res_image = cv2.resize(high_res_image, (RESIZED_WIDTH, RESIZED_HEIGHT))
-
-            # Convert resized image back to ROS Image
-            low_res_image_msg = self.bridge.cv2_to_imgmsg(low_res_image, "bgr8")
-            
-            # Publish the resized image
-            self.resized_image_pub.publish(low_res_image_msg)
-
-            # Save the resized image for further processing
-            self.col1_msg = low_res_image_msg
-
-        except CvBridgeError as e:
-            rospy.logerr(f"CvBridge Error: {e}")
-        self.yolo()
-
-    def preprocess(self, col1_msg: Image) -> np.ndarray:
-        # Convert col_msg
-        cv_col1_img = self.bridge.imgmsg_to_cv2(col1_msg, desired_encoding="bgr8")
-        np_col1_img = np.asanyarray(cv_col1_img, dtype=np.uint8)
-        return np_col1_img
-
-    def yolo(self):
-        while rospy.is_shutdown() is False:
-            self.camera_point.header.stamp = rospy.Time.now()
-            if self.col1_msg is not None:
-                color_img = self.preprocess(self.col1_msg)
-
-                # YOLO detection
-                results = self.model.predict(source=color_img, verbose=VERBOSE)
-
-                for obj in results:
-                    self.results_img = obj.plot()
-                    self.yolo_result_pub.publish(self.bridge.cv2_to_imgmsg(self.results_img, encoding="bgr8"))
-                    boxes = obj.boxes
-                    for box in boxes:
-                        x1, y1, x2, y2 = map(int, box.xyxy[0])
-                        pixel_x, pixel_y = round((x1 + x2) / 2), round((y1 + y2) / 2)
-                        depth = CONE_LEN / ((y2 - y1) * SENSOR_HEIGHT) * FOCAL_LENGTH
-
-                        class_id = int(box.cls)
-                        label = str(self.model.names[class_id])
-
-                        # Transform coordinates
-                        world_x, world_y, world_z = self.transform_coordinates(pixel_x, pixel_y, depth)
-
-                        self.collect_world_points(label, world_x, world_y, world_z)
-
-                self.publish_world_points()
-
-                if not self.yolo_thread_started:
-                    log_thread = threading.Thread(target=self.log_same_line)
-                    log_thread.daemon = True
-                    log_thread.start()
-                    self.yolo_thread_started = True
-
-    def log_same_line(self):
-        while not rospy.is_shutdown():
-            sys.stdout.write("\033[2J\033[H")
-            rospy.loginfo("Processing YOLO .  ")
-            time.sleep(1)
-
-            sys.stdout.write("\033[F\033[K")
-            rospy.loginfo("Processing YOLO .. ")
-            time.sleep(1)
-
-            sys.stdout.write("\033[F\033[K")
-            rospy.loginfo("Processing YOLO ...")
-            time.sleep(1)
-
-    def transform_coordinates(self, x, y, depth):
-        self.camera_point.point.x = (depth * (x - 321.72626) / 1170.47874)
-        self.camera_point.point.y = (depth * (y - 242.67215) / 1170.85504)
-        self.camera_point.point.z = depth
-        self.camera_point.header.stamp = rospy.Time.now()
-
-        try:
-            self.tf_buffer.can_transform('map', 'tiscamera', rospy.Time(0), rospy.Duration(1.0))
-            world_point = tf2_geometry_msgs.do_transform_point(
-                self.camera_point, self.tf_buffer.lookup_transform('map', 'tiscamera', rospy.Time(0)))
-            return world_point.point.x, world_point.point.y, world_point.point.z
-
-        except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException) as ex:
-            rospy.logerr("Transform error: %s", str(ex))
-            return None
-
-    def collect_world_points(self, label, world_x, world_y, world_z):
-        world_point = PointStamped()
-        world_point.header.frame_id = label
-        world_point.point.x = world_x
-        world_point.point.y = world_y/2
-        world_point.point.z = world_z
-
-        self.world_points.append(world_point)
-
-    def publish_world_points(self):
-        labeled_point_array_msg = LabeledPointArray()
-        labeled_point_array_msg.labels = []
-        labeled_point_array_msg.x = []
-        labeled_point_array_msg.y = []
-        labeled_point_array_msg.z = []
-
-        for point in self.world_points:
-            labeled_point_array_msg.labels.append(point.header.frame_id)
-            labeled_point_array_msg.x.append(point.point.x)
-            labeled_point_array_msg.y.append(point.point.y)
-            labeled_point_array_msg.z.append(point.point.z)
-
-        self.world_point_array_pub.publish(labeled_point_array_msg)
-        self.header_pub.publish(self.camera_point.header)
-        self.world_points.clear()
 
 if __name__ == '__main__':
     try:
-        vision_node_l = Node("left")
-        vision_node_r = Node("right")
-        rospy.loginfo("Starting YOLO detection...")
-
+        process()
     except rospy.ROSInterruptException:
         pass
