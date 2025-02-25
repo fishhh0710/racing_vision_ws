@@ -39,6 +39,34 @@ world_point_array_pub_l = rospy.Publisher("/yolo/objects/world_point_array_left"
 yolo_result_pub_r = rospy.Publisher("/yolo/objects/yolo_result_right", Image, queue_size=10)
 world_point_array_pub_r = rospy.Publisher("/yolo/objects/world_point_array_right", LabeledPointArray, queue_size=10)
 
+def distortBackPoints(x, y):
+
+    fx = 1605.262159
+    fy = 1607.616295
+    cx = 959.553002
+    cy = 527.920353
+    k1 = -0.691536 * -1
+    k2 = 0.414902 * -1
+    k3 = 0.0 * -1
+    p1 = 0.007394 * -1
+    p2 = -0.000337 * -1
+
+    x = (x - cx) / fx
+    y = (y - cy) / fy
+
+    r2 = x*x + y*y
+
+    xDistort = x * (1 + k1 * r2 + k2 * r2 * r2 + k3 * r2 * r2 * r2)
+    yDistort = y * (1 + k1 * r2 + k2 * r2 * r2 + k3 * r2 * r2 * r2)
+
+    xDistort = xDistort + (2 * p1 * x * y + p2 * (r2 + 2 * x * x))
+    yDistort = yDistort + (p1 * (r2 + 2 * y * y) + 2 * p2 * x * y)
+
+    xDistort = xDistort * fx + cx
+    yDistort = yDistort * fy + cy
+
+    return xDistort, yDistort
+
 def call_back_left(cb_data):
     # left_img = cb_data
     # global ltl,cll
@@ -60,33 +88,6 @@ def call_back_right(cb_data):
     # ltr = tr
     # clr += 1
     yolo_proc(cb_data,0)
-
-def distortBackPoints(x, y, cameraMatrix, dist):
-
-    fx = 1524.639574
-    fy = 1514.123479
-    cx = 963.594215
-    cy = 514.740181
-    k1 = -0.569882 * -1
-    k2 = 0.230664 * -1
-    k3 = 0.000000 * -1
-    p1 = 0.010624 * -1
-    p2 = 0.005089 * -1
-    x = (x - cx) / fx
-    y = (y - cy) / fy
-
-    r2 = x*x + y*y
-
-    xDistort = x * (1 + k1 * r2 + k2 * r2 * r2 + k3 * r2 * r2 * r2)
-    yDistort = y * (1 + k1 * r2 + k2 * r2 * r2 + k3 * r2 * r2 * r2)
-
-    xDistort = xDistort + (2 * p1 * x * y + p2 * (r2 + 2 * x * x))
-    yDistort = yDistort + (p1 * (r2 + 2 * y * y) + 2 * p2 * x * y)
-
-    xDistort = xDistort * fx + cx;
-    yDistort = yDistort * fy + cy;
-
-    return xDistort, yDistort
 
 def rotation_matrix_3d(axis, angle):
     theta = np.radians(angle)
@@ -151,7 +152,7 @@ def yolo_proc(proimg, lr):
         # world_x, world_y, world_z = transform_coordinates(pixel_x, pixel_y, depth)
         import numpy as np
         points = np.array([pixel_x, pixel_y, depth]) 
-        rotation_angles = (-0.65, 0, 60)
+        rotation_angles = (-0.65, 0, -60)
         translation = np.array([0, 0, 0])
         np = transform_3d(points,rotation_angles,translation)
         # print(np)
@@ -170,9 +171,9 @@ def yolo_proc(proimg, lr):
     #     yolo_result_pub_r.publish(bridge.cv2_to_imgmsg(res_img, encoding="bgr8"))
 
 def process():
-    rospy.init_node("dual_yolo_node")
-    # rospy.Subscriber('/camera/image_raw_left',Image,call_back_left)
-    rospy.Subscriber('/camera/image_raw_right',Image,call_back_right)
+    rospy.init_node("dual_yolo_node_left_test")
+    rospy.Subscriber('/camera/image_raw_left',Image,call_back_left)
+    # rospy.Subscriber('/camera/image_raw_right',Image,call_back_right)
     rospy.spin()
 
 
@@ -184,71 +185,3 @@ if __name__ == '__main__':
         process()
     except rospy.ROSInterruptException:
         pass
-
-
-# Camera 1(120 deg)
-# [narrow_stereo]
-
-# camera matrix
-# 1605.262159 0.000000 959.553002
-# 0.000000 1607.616295 527.920353
-# 0.000000 0.000000 1.000000
-
-# distortion
-# -0.691536 0.414902 0.007394 -0.000337 0.000000
-
-# rectification
-# 1.000000 0.000000 0.000000
-# 0.000000 1.000000 0.000000
-# 0.000000 0.000000 1.000000
-
-# projection
-# 1157.513374 0.000000 958.206193 0.000000
-# 0.000000 1470.375499 531.322520 0.000000
-# 0.000000 0.000000 1.000000 0.000000
-
-# --------
-
-# camera 0(180 deg)
-# [narrow_stereo]
-
-# camera matrix
-# 1257.707515 0.000000 909.390490
-# 0.000000 1281.972428 553.271695
-# 0.000000 0.000000 1.000000
-
-# distortion
-# -0.615255 0.231877 0.003040 0.011792 0.000000
-
-# rectification
-# 1.000000 0.000000 0.000000
-# 0.000000 1.000000 0.000000
-# 0.000000 0.000000 1.000000
-
-# projection
-# 886.296188 0.000000 898.908643 0.000000
-# 0.000000 1111.865048 562.198380 0.000000
-# 0.000000 0.000000 1.000000 0.000000
-
-# ----------------
-
-# camera 0 (120 deg)
-# [narrow_stereo]
-
-# camera matrix
-# 1524.639574 0.000000 963.594215
-# 0.000000 1514.123479 514.740181
-# 0.000000 0.000000 1.000000
-
-# distortion
-# -0.569882 0.230664 0.010624 0.005089 0.000000
-
-# rectification
-# 1.000000 0.000000 0.000000
-# 0.000000 1.000000 0.000000
-# 0.000000 0.000000 1.000000
-
-# projection
-# 1046.346222 0.000000 999.923059 0.000000
-# 0.000000 1393.574077 518.548481 0.000000
-# 0.000000 0.000000 1.000000 0.000000

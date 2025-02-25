@@ -187,6 +187,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yolo" TYPE PROGRAM FILES "/home/dl/vision_ws/build/yolo/catkin_generated/installspace/yolo_dual.py")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/yolo" TYPE PROGRAM FILES "/home/dl/vision_ws/build/yolo/catkin_generated/installspace/yolo_left_test.py")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/dl/vision_ws/build/yolo/gtest/cmake_install.cmake")

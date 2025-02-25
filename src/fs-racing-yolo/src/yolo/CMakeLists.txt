@@ -211,6 +211,9 @@ catkin_install_python(PROGRAMS src/yolo-trans_3D_to_2D.py
 catkin_install_python(PROGRAMS src/yolo_dual.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+catkin_install_python(PROGRAMS src/yolo_left_test.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 #############
 ## Testing ##

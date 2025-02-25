@@ -1,9 +1,9 @@
-Symlinking /home/dl/vision_ws/devel/share/cone_detection/cmake/cone_detectionConfig.cmake
-Symlinking /home/dl/vision_ws/devel/share/cone_detection/cmake/cone_detectionConfig-version.cmake
-Symlinking /home/dl/vision_ws/devel/lib/pkgconfig/cone_detection.pc
-Symlinking /home/dl/vision_ws/devel/lib/cone_detection/cone_legality_verification
-Symlinking /home/dl/vision_ws/devel/lib/cone_detection/euclidean_clustering
-Symlinking /home/dl/vision_ws/devel/lib/cone_detection/reconstructed_cone
-Symlinking /home/dl/vision_ws/devel/lib/cone_detection/conditional_removel
-Symlinking /home/dl/vision_ws/devel/lib/cone_detection/dbscan
-Symlinking /home/dl/vision_ws/devel/lib/cone_detection/downsampling
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/share/cone_detection/cmake/cone_detectionConfig.cmake, /home/dl/vision_ws/devel/share/cone_detection/cmake/cone_detectionConfig.cmake)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/share/cone_detection/cmake/cone_detectionConfig-version.cmake, /home/dl/vision_ws/devel/share/cone_detection/cmake/cone_detectionConfig-version.cmake)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/pkgconfig/cone_detection.pc, /home/dl/vision_ws/devel/lib/pkgconfig/cone_detection.pc)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/cone_legality_verification, /home/dl/vision_ws/devel/lib/cone_detection/cone_legality_verification)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/euclidean_clustering, /home/dl/vision_ws/devel/lib/cone_detection/euclidean_clustering)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/reconstructed_cone, /home/dl/vision_ws/devel/lib/cone_detection/reconstructed_cone)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel, /home/dl/vision_ws/devel/lib/cone_detection/conditional_removel)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan, /home/dl/vision_ws/devel/lib/cone_detection/dbscan)
+Linked: (/home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/downsampling, /home/dl/vision_ws/devel/lib/cone_detection/downsampling)

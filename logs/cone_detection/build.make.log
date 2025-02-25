@@ -1,24 +1,6 @@
-[35m[1mScanning dependencies of target reconstructed_cone[0m
-[35m[1mScanning dependencies of target conditional_removel[0m
-[35m[1mScanning dependencies of target cone_legality_verification[0m
-[35m[1mScanning dependencies of target euclidean_clustering[0m
-[35m[1mScanning dependencies of target dbscan[0m
-[35m[1mScanning dependencies of target downsampling[0m
-[  8%] [32mBuilding CXX object CMakeFiles/conditional_removel.dir/src/conditional_removel.cpp.o[0m
-[ 16%] [32mBuilding CXX object CMakeFiles/cone_legality_verification.dir/src/cone_legality_verification.cpp.o[0m
-[ 25%] [32mBuilding CXX object CMakeFiles/reconstructed_cone.dir/src/reconstructed_cone.cpp.o[0m
-[ 33%] [32mBuilding CXX object CMakeFiles/dbscan.dir/src/dbscan.cpp.o[0m
-[ 41%] [32mBuilding CXX object CMakeFiles/downsampling.dir/src/downsampling.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/euclidean_clustering.dir/src/euclidean_clustering.cpp.o[0m
-[ 58%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/downsampling[0m
-[ 58%] Built target downsampling
-[ 66%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/euclidean_clustering[0m
-[ 75%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/reconstructed_cone[0m
-[ 83%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel[0m
-[ 83%] Built target reconstructed_cone
-[ 83%] Built target euclidean_clustering
-[ 91%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/cone_legality_verification[0m
-[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/dbscan[0m
-[100%] Built target conditional_removel
+[ 16%] Built target conditional_removel
+[ 33%] Built target reconstructed_cone
+[ 50%] Built target euclidean_clustering
+[ 66%] Built target downsampling
+[ 83%] Built target cone_legality_verification
 [100%] Built target dbscan
-[100%] Built target cone_legality_verification
