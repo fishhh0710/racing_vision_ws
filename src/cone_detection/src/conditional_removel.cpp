@@ -24,6 +24,12 @@ void cloudCallback(const sensor_msgs::PointCloud2ConstPtr& cloud_msg)
     pcl::PointCloud<pcl::PointXYZ> cropped_cloud;
     crop.filter(cropped_cloud);
 
+    for (auto& point : cropped_cloud.points) {
+        auto temp = point;
+        point.x = 0.996*temp.x-0.091*temp.z;
+        point.y = -temp.y;
+        point.z = -0.091*temp.x - 0.996 * temp.z + 1.05;
+    }
     sensor_msgs::PointCloud2 output_cloud;
     pcl::toROSMsg(cropped_cloud, output_cloud);
     output_cloud.header = cloud_msg->header;

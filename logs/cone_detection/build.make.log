@@ -1,6 +1,9 @@
-[ 16%] Built target conditional_removel
-[ 33%] Built target reconstructed_cone
-[ 50%] Built target euclidean_clustering
-[ 66%] Built target downsampling
-[ 83%] Built target cone_legality_verification
-[100%] Built target dbscan
+[35m[1mScanning dependencies of target conditional_removel[0m
+[ 16%] Built target downsampling
+[ 41%] Built target euclidean_clustering
+[ 58%] Built target dbscan
+[ 66%] Built target cone_legality_verification
+[ 83%] Built target reconstructed_cone
+[ 91%] [32mBuilding CXX object CMakeFiles/conditional_removel.dir/src/conditional_removel.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/dl/vision_ws/devel/.private/cone_detection/lib/cone_detection/conditional_removel[0m
+[100%] Built target conditional_removel

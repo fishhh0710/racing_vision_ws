@@ -11,7 +11,7 @@ conditional_removel_max_x: 30 # 15
 conditional_removel_min_y: -7 # -10
 conditional_removel_max_y: 7
 conditional_removel_min_z: -0.5
-conditional_removel_max_z: 0.5
+conditional_removel_max_z: 1.5
 
 conditional_source: "/rslidar_points"
 downsample_source: "/field_of_view_trimming"

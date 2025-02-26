@@ -26,7 +26,7 @@ WEIGHT_PATH = "/home/dl/vision_ws/src/fs-racing-yolo/src/yolo/src/weight/10ep.pt
 VERBOSE = False  # YOLO verbose (showing detection output)
 
 # Camera intrinsic parameters
-FOCAL_LENGTH = 4  # mm
+FOCAL_LENGTH = 3  # mm
 SENSOR_HEIGHT = 3.45e-3  # mm
 # Cone length
 CONE_LEN = 0.3  # m
@@ -34,6 +34,33 @@ CONE_LEN = 0.3  # m
 # Image resolution for resizing
 RESIZED_WIDTH = 640
 RESIZED_HEIGHT = 480
+
+def distortBackPoints(x, y):
+
+    fx = 1524.639574
+    fy = 1514.123479
+    cx = 963.594215
+    cy = 514.740181
+    k1 = -0.569882 * -1
+    k2 = 0.230664 * -1
+    k3 = 0.000000 * -1
+    p1 = 0.010624 * -1
+    p2 = 0.005089 * -1
+    x = (x - cx) / fx
+    y = (y - cy) / fy
+
+    r2 = x*x + y*y
+
+    xDistort = x * (1 + k1 * r2 + k2 * r2 * r2 + k3 * r2 * r2 * r2)
+    yDistort = y * (1 + k1 * r2 + k2 * r2 * r2 + k3 * r2 * r2 * r2)
+
+    xDistort = xDistort + (2 * p1 * x * y + p2 * (r2 + 2 * x * x))
+    yDistort = yDistort + (p1 * (r2 + 2 * y * y) + 2 * p2 * x * y)
+
+    xDistort = xDistort * fx + cx;
+    yDistort = yDistort * fy + cy;
+
+    return xDistort, yDistort
 
 class Node:
     def __init__(self):
@@ -60,7 +87,8 @@ class Node:
 
         ### Subscriber ###
         self.col1_msg = None
-        self.sub_col1 = rospy.Subscriber("/usb_cam/image_raw", Image, self.col_callback1)
+        self.sub_col1 = rospy.Subscriber("/camera/image_raw_right", Image, self.col_callback1)
+        # self.sub_col1 = rospy.Subscriber("/usb_cam/image_raw", Image, self.col_callback1)
 
         ### Other tools ###
         # CvBridge
@@ -76,10 +104,11 @@ class Node:
 
             # Resize image
             low_res_image = cv2.resize(high_res_image, (RESIZED_WIDTH, RESIZED_HEIGHT))
+            low_res_image = cv2.flip(low_res_image,0)
 
             # Convert resized image back to ROS Image
             low_res_image_msg = self.bridge.cv2_to_imgmsg(low_res_image, "bgr8")
-            
+
             # Publish the resized image
             self.resized_image_pub.publish(low_res_image_msg)
 
@@ -110,6 +139,8 @@ class Node:
                     boxes = obj.boxes
                     for box in boxes:
                         x1, y1, x2, y2 = map(int, box.xyxy[0])
+                        x1,y1 = distortBackPoints(x1,y1)
+                        x2,y2 = distortBackPoints(x2,y2)
                         pixel_x, pixel_y = round((x1 + x2) / 2), round((y1 + y2) / 2)
                         depth = CONE_LEN / ((y2 - y1) * SENSOR_HEIGHT) * FOCAL_LENGTH
 
