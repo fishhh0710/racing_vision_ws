@@ -299,7 +299,7 @@ global vehicle_direction  # 新增方向變數
 
 def create_cone_marker(cone_position, cone_id, color):
     marker = Marker()
-    marker.header.frame_id = "map"
+    marker.header.frame_id = "rslidar"
     marker.type = Marker.SPHERE
     marker.action = Marker.ADD
     marker.id = cone_id
@@ -320,7 +320,7 @@ def create_path_marker(path_points):
         rospy.loginfo(f"Path start point: x={start_point[0]}, y={start_point[1]}")
 
     marker = Marker()
-    marker.header.frame_id = "map"
+    marker.header.frame_id = "rslidar"
     marker.type = Marker.LINE_STRIP
     marker.action = Marker.ADD
     marker.id = 1000  # 假設ID 1000留給路徑
@@ -401,12 +401,12 @@ def publish_path(final_path):
     rospy.loginfo("Publishing path...")  # 添加這行來確認是否執行到這裡
     path_msg = Path()
     path_msg.header.stamp = rospy.Time.now()
-    path_msg.header.frame_id = "map"
+    path_msg.header.frame_id = "rslidar"
 
     for point in final_path:
         pose = PoseStamped()
         pose.header.stamp = rospy.Time.now()
-        pose.header.frame_id = "map"
+        pose.header.frame_id = "rslidar"
         pose.pose.position.x = point[1]  # X 座標
         pose.pose.position.y = point[2]  # Y 座標
         pose.pose.position.z = 0.0  # Z 座標為0，因為是2D路徑
@@ -430,7 +430,7 @@ def delete_previous_cone_markers(current_ids):
     for marker_id in previous_cone_marker_ids:
         if marker_id not in current_ids:
             delete_marker = Marker()
-            delete_marker.header.frame_id = "map"
+            delete_marker.header.frame_id = "rslidar"
             delete_marker.id = marker_id
             delete_marker.action = Marker.DELETE  # 設置為刪除動作
             marker_array.markers.append(delete_marker)
@@ -564,7 +564,7 @@ if __name__ == '__main__':
         slam_direction=vehicle_direction
     )
 
-    #rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
-    rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
+    rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
+    # rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
 
     rospy.spin()

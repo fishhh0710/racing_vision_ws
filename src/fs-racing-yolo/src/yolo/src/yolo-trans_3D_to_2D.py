@@ -80,7 +80,7 @@ class CoordinateTransformerNode:
             marker.type = Marker.SPHERE
             marker.action = Marker.ADD
             marker.pose.position.x = y
-            marker.pose.position.y = -x
+            marker.pose.position.y = x
             marker.pose.position.z = 0  # Z軸設為0
             marker.scale.x = 0.5  # 點的大小
             marker.scale.y = 0.5
@@ -116,7 +116,7 @@ class CoordinateTransformerNode:
         # 發佈相對座標到新主題
         relative_coords_msg = LabeledPointArray()  # 根據 LabeledPointArray 的結構設置
         relative_coords_msg.x = [(p[1]) for p in relative_points_2d]
-        relative_coords_msg.y = [(-p[0]) for p in relative_points_2d]
+        relative_coords_msg.y = [(p[0]) for p in relative_points_2d]
         relative_coords_msg.z = [0.0] * len(relative_points_2d)  # z 坐標全為 0
         relative_coords_msg.labels = relative_labels  # 發佈標籤
 

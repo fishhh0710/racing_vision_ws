@@ -36,7 +36,7 @@ public:
             marker.action = visualization_msgs::Marker::ADD;
             marker.pose.position.x = y_values[i];
             marker.pose.position.y = -x_values[i];
-            marker.pose.position.z = 0;
+            marker.pose.position.z = z_values[i];
             marker.pose.orientation.x = 0.0;
             marker.pose.orientation.y = 0.0;
             marker.pose.orientation.z = 0.0;

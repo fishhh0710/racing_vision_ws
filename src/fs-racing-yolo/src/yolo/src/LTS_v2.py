@@ -27,9 +27,10 @@ VERBOSE = False  # YOLO verbose (showing detection output)
 
 # Camera intrinsic parameters
 FOCAL_LENGTH = 3  # mm
-SENSOR_HEIGHT = 3.45e-3  # mm
+SENSOR_HEIGHT = 0.003  # mm
 # Cone length
-CONE_LEN = 0.3  # m
+CONE_LEN = 0.31  # m
+BIG_CONE_LEN = 0.51  # m
 
 # Image resolution for resizing
 RESIZED_WIDTH = 640
@@ -57,8 +58,8 @@ def distortBackPoints(x, y):
     xDistort = xDistort + (2 * p1 * x * y + p2 * (r2 + 2 * x * x))
     yDistort = yDistort + (p1 * (r2 + 2 * y * y) + 2 * p2 * x * y)
 
-    xDistort = xDistort * fx + cx;
-    yDistort = yDistort * fy + cy;
+    xDistort = xDistort * fx + cx
+    yDistort = yDistort * fy + cy
 
     return xDistort, yDistort
 
@@ -142,10 +143,12 @@ class Node:
                         x1,y1 = distortBackPoints(x1,y1)
                         x2,y2 = distortBackPoints(x2,y2)
                         pixel_x, pixel_y = round((x1 + x2) / 2), round((y1 + y2) / 2)
-                        depth = CONE_LEN / ((y2 - y1) * SENSOR_HEIGHT) * FOCAL_LENGTH
+                        depth = CONE_LEN * FOCAL_LENGTH / ((y2 - y1) * SENSOR_HEIGHT) 
 
                         class_id = int(box.cls)
                         label = str(self.model.names[class_id])
+                        if label=="large_orange_cone":
+                            depth = BIG_CONE_LEN * FOCAL_LENGTH / ((y2 - y1) * SENSOR_HEIGHT) 
 
                         # Transform coordinates
                         world_x, world_y, world_z = self.transform_coordinates(pixel_x, pixel_y, depth)
@@ -176,7 +179,8 @@ class Node:
 
     def transform_coordinates(self, x, y, depth):
         self.camera_point.point.x = (depth * (x - 321.72626) / 1170.47874)
-        self.camera_point.point.y = (depth * (y - 242.67215) / 1170.85504)
+        self.camera_point.point.y = (depth * (y - 242.67215) / 1700.85504)
+        # self.camera_point.point.y = (depth * (y - 242.67215) / 1170.85504)
         self.camera_point.point.z = depth
         self.camera_point.header.stamp = rospy.Time.now()
 
@@ -193,7 +197,7 @@ class Node:
     def collect_world_points(self, label, world_x, world_y, world_z):
         world_point = PointStamped()
         world_point.header.frame_id = label
-        world_point.point.x = world_x
+        world_point.point.x = world_x*2
         world_point.point.y = world_y/2
         world_point.point.z = world_z
 

@@ -4,7 +4,7 @@ dbscan_k: 50
 
 downsampling_x_leafsize: 0.05
 downsampling_y_leafsize: 0.05
-downsampling_z_leafsize: 0.002
+downsampling_z_leafsize: 0.003
 
 conditional_removel_min_x: 0 # -15
 conditional_removel_max_x: 30 # 15
