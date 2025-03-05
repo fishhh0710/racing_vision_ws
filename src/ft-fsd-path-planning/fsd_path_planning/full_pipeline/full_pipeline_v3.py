@@ -469,7 +469,7 @@ if __name__ == '__main__':
         slam_direction=vehicle_direction
     )
 
-    rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
-    # rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
+    # rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
+    rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
 
     rospy.spin()

@@ -112,6 +112,8 @@ ground_segmentation_test_node_EXTERNAL_OBJECTS =
 /home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
 /home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 /home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/x86_64-linux-gnu/libqhull.so
+/home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/libOpenNI.so
+/home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/libOpenNI2.so
 /home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/x86_64-linux-gnu/libvtkChartsCore-7.1.so.7.1p.1
 /home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/x86_64-linux-gnu/libvtkInfovisCore-7.1.so.7.1p.1
 /home/dl/vision_ws/devel/.private/linefit_ground_segmentation_ros/lib/linefit_ground_segmentation_ros/ground_segmentation_test_node: /usr/lib/x86_64-linux-gnu/libfreetype.so

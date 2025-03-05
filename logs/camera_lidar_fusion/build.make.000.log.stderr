@@ -3,5 +3,5 @@
       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
 compilation terminated.
 make[2]: *** [CMakeFiles/camera_lidar_fusion.dir/build.make:63: CMakeFiles/camera_lidar_fusion.dir/src/camera_lidar_fusion.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:1267: CMakeFiles/camera_lidar_fusion.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:1503: CMakeFiles/camera_lidar_fusion.dir/all] Error 2
 make: *** [Makefile:141: all] Error 2

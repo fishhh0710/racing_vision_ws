@@ -1,6 +1,6 @@
+[ 16%] Built target cone_legality_verification
 [ 33%] Built target conditional_removel
-[ 25%] Built target cone_legality_verification
-[ 66%] Built target downsampling
-[ 66%] Built target euclidean_clustering
-[ 83%] Built target reconstructed_cone
+[ 50%] Built target euclidean_clustering
+[ 66%] Built target reconstructed_cone
+[ 83%] Built target downsampling
 [100%] Built target dbscan
