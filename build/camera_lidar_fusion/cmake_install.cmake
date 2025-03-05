@@ -129,7 +129,16 @@ file(INSTALL DESTINATION "/home/dl/vision_ws/install" TYPE FILE FILES "/home/dl/
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_lidar_fusion/msg" TYPE FILE FILES "/home/dl/vision_ws/src/camera_lidar_fusion/msg/LabeledPointArray.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/camera_lidar_fusion/msg" TYPE FILE FILES
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/LabeledPointArray.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/Cone.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/ConeDetections.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/Map.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/ControlCommand.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/CarState.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/CarStateDt.msg"
+    "/home/dl/vision_ws/src/camera_lidar_fusion/msg/Mission.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

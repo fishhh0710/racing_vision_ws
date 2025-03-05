@@ -554,8 +554,8 @@ CMakeFiles/_catkin_empty_exported_target.dir/clean:
 # Target rules for target CMakeFiles/run_tests_camera_calibration_nosetests.dir
 
 # All Build rule for target.
-CMakeFiles/run_tests_camera_calibration_nosetests.dir/all: CMakeFiles/run_tests_camera_calibration_nosetests_test.multiple_boards.py.dir/all
 CMakeFiles/run_tests_camera_calibration_nosetests.dir/all: CMakeFiles/run_tests_camera_calibration_nosetests_test.directed.py.dir/all
+CMakeFiles/run_tests_camera_calibration_nosetests.dir/all: CMakeFiles/run_tests_camera_calibration_nosetests_test.multiple_boards.py.dir/all
 	$(MAKE) -f CMakeFiles/run_tests_camera_calibration_nosetests.dir/build.make CMakeFiles/run_tests_camera_calibration_nosetests.dir/depend
 	$(MAKE) -f CMakeFiles/run_tests_camera_calibration_nosetests.dir/build.make CMakeFiles/run_tests_camera_calibration_nosetests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dl/vision_ws/build/camera_calibration/CMakeFiles --progress-num= "Built target run_tests_camera_calibration_nosetests"

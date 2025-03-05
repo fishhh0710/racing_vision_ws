@@ -54,15 +54,82 @@ CMAKE_BINARY_DIR = /home/dl/vision_ws/build/camera_lidar_fusion
 include CMakeFiles/camera_lidar_fusion_generate_messages_nodejs.dir/progress.make
 
 CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/LabeledPointArray.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Cone.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ControlCommand.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarStateDt.js
+CMakeFiles/camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Mission.js
 
 
 /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/LabeledPointArray.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/LabeledPointArray.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/LabeledPointArray.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from camera_lidar_fusion/LabeledPointArray.msg"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/LabeledPointArray.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/LabeledPointArray.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Cone.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Cone.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/Cone.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Cone.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Cone.js: /opt/ros/noetic/share/std_msgs/msg/String.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from camera_lidar_fusion/Cone.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/Cone.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/ConeDetections.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/Cone.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from camera_lidar_fusion/ConeDetections.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/ConeDetections.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/Map.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/Cone.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from camera_lidar_fusion/Map.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/Map.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ControlCommand.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ControlCommand.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/ControlCommand.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ControlCommand.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ControlCommand.js: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from camera_lidar_fusion/ControlCommand.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/ControlCommand.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/CarState.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/CarStateDt.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose2D.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from camera_lidar_fusion/CarState.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/CarState.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarStateDt.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarStateDt.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/CarStateDt.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarStateDt.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarStateDt.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose2D.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from camera_lidar_fusion/CarStateDt.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/CarStateDt.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
+
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Mission.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Mission.js: /home/dl/vision_ws/src/camera_lidar_fusion/msg/Mission.msg
+/home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Mission.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dl/vision_ws/build/camera_lidar_fusion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from camera_lidar_fusion/Mission.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/dl/vision_ws/src/camera_lidar_fusion/msg/Mission.msg -Icamera_lidar_fusion:/home/dl/vision_ws/src/camera_lidar_fusion/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p camera_lidar_fusion -o /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg
 
 camera_lidar_fusion_generate_messages_nodejs: CMakeFiles/camera_lidar_fusion_generate_messages_nodejs
 camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/LabeledPointArray.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Cone.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ConeDetections.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Map.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/ControlCommand.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarState.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/CarStateDt.js
+camera_lidar_fusion_generate_messages_nodejs: /home/dl/vision_ws/devel/.private/camera_lidar_fusion/share/gennodejs/ros/camera_lidar_fusion/msg/Mission.js
 camera_lidar_fusion_generate_messages_nodejs: CMakeFiles/camera_lidar_fusion_generate_messages_nodejs.dir/build.make
 
 .PHONY : camera_lidar_fusion_generate_messages_nodejs

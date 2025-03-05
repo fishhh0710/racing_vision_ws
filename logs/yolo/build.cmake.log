@@ -36,6 +36,7 @@ Not searching for unused variables given on the command line.
 [36m--[0m yolo: 1 messages, 0 services
 [36m--[0m Installing devel-space wrapper /home/dl/vision_ws/src/fs-racing-yolo/src/yolo/src/yolo-trans_3D_to_2D.py to /home/dl/vision_ws/devel/.private/yolo/lib/yolo
 [36m--[0m Installing devel-space wrapper /home/dl/vision_ws/src/fs-racing-yolo/src/yolo/src/yolo_dual.py to /home/dl/vision_ws/devel/.private/yolo/lib/yolo
+[36m--[0m Installing devel-space wrapper /home/dl/vision_ws/src/fs-racing-yolo/src/yolo/src/yolo_left_test.py to /home/dl/vision_ws/devel/.private/yolo/lib/yolo
 [36m--[0m Configuring done
 [36m--[0m Generating done
 [36m--[0m Build files have been written to: /home/dl/vision_ws/build/yolo

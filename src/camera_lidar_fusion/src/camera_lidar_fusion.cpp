@@ -13,7 +13,7 @@ using namespace std;
 const double eps = 1e-7;
 //type: 1:blue 2:yellow
 
-ros::Publisher pub,pub_label;
+ros::Publisher pub,pub_label,pub_path_plan;
 
 
 std::vector<std::pair<double, double>> lidar_points;
@@ -75,7 +75,7 @@ double dis(std::pair<double,double> a,std::pair<double,double> b){
 void calculate_dis() {
     ROS_INFO("Lidar points size: %zu, Camera points size: %zu", lidar_points.size(), cam_points.size());
     visualization_msgs::MarkerArray marker_array;
-    camera_lidar_fusion::LabeledPointArray temp;
+    camera_lidar_fusion::LabeledPointArray temp,temp_path_p;
     matched_pts.clear();
     int now = 0;
     for(auto i:cam_points){
@@ -93,11 +93,32 @@ void calculate_dis() {
             maxid = std::max(maxid,(int)matched_pts.size());
             temp.x.push_back(now_ds.F);
             temp.y.push_back(now_ds.S);
+            temp_path_p.x.push_back(now_ds.F);
+            temp_path_p.y.push_back(now_ds.S);
             if(i.S==1){
+                temp_path_p.labels.push_back("blue_cone");
                 temp.labels.push_back("blue_cone");
             }
-            else{
+            else if(i.S==2){
+                temp_path_p.labels.push_back("yellow_cone");
                 temp.labels.push_back("yellow_cone");
+            }
+            else{
+                temp_path_p.labels.push_back("unknow_cone");
+                temp.labels.push_back("unknow_cone");
+            }
+        }
+        else{
+            temp_path_p.x.push_back(i.F.F);
+            temp_path_p.y.push_back(i.F.S);
+            if(i.S==1){
+                temp_path_p.labels.push_back("blue_cone");
+            }
+            else if(i.S==2){
+                temp_path_p.labels.push_back("yellow_cone");
+            }
+            else{
+                temp_path_p.labels.push_back("unknow_cone");
             }
         }
         for(int i = 0; i < maxid - matched_pts.size(); i++){
@@ -148,6 +169,7 @@ int main(int argc, char** argv) {
     ros::NodeHandle nh;
     pub = nh.advertise<visualization_msgs::MarkerArray>("/camera_lidar_fusion/lidar_camera_markers", 1);
     pub_label = nh.advertise<camera_lidar_fusion::LabeledPointArray>("/camera_lidar_fusion/lidar_camera_pos", 1);
+    pub_path_plan = nh.advertise<camera_lidar_fusion::LabeledPointArray>("/camera_lidar_fusion/path_plan_pos", 1);
     
     // Subscriber
     ros::Subscriber lidar_sub = nh.subscribe("/dbscan_position", 1, lidarCallback);

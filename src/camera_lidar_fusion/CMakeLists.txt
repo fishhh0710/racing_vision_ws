@@ -52,6 +52,13 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   LabeledPointArray.msg
+  Cone.msg
+  ConeDetections.msg
+  Map.msg
+  ControlCommand.msg
+  CarState.msg
+  CarStateDt.msg
+  Mission.msg
 )
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -71,6 +78,7 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+  geometry_msgs
 )
 
 ################################################

@@ -160,11 +160,11 @@ class PathPlanner:
                 )
                 '''
                 self.cone_sorting.set_new_input(cone_sorting_input)
-                sorted_left, sorted_right = self.cone_sorting.run_cone_sorting()
+                sorted_left, sorted_right = self.cone_sorting.run_cone_sorting() # tuple<float_array,float_array>
 
 
                 # 打印排序結果
-                print(f"Sorted left cones: {sorted_left}") 
+                print(f"Sorted left cones!: {sorted_left}") 
                 print(f"Sorted right cones: {sorted_right}")
 
 
@@ -251,52 +251,6 @@ global cone_sorting_input
 global vehicle_position
 global vehicle_direction  # 新增方向變數
 
-'''def plot_path(final_path, cones): #用Matplotlib顯示（不是rviz)
-    plt.ion()  # 開啟互動模式
-    plt.clf()  # 清除之前的圖形
-
-    path_x = final_path[:, 1]
-    path_y = final_path[:, 2]
-
-    #plt.figure(figsize=(10, 10))  #創建新的圖框
-
-    cones_x = cones[:, 0]
-    cones_y = cones[:, 1]
-    plt.scatter(cones_x, cones_y, color='black', label='Cones', zorder=5)
-    
-    # 繪製計算出的路徑
-    plt.plot(path_x, path_y, '-o', color='blue', label='Path', zorder=10)
-
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.title('Path Planning with Cones')
-    plt.legend()
-    plt.grid(True)
-
-    #plt.show(block=False)
-    #plt.pause(1)  # 暫停一點時間以刷新顯示
-    plt.draw()  # 更新圖形
-    plt.pause(0.001)  # 短暫暫停，允許圖形更新
-'''
-
-#def update_vehicle_position_and_direction(movement_delta):
-    #global vehicle_position, vehicle_direction
-    #previous_position = vehicle_position.copy()  # 儲存先前位置
-    #vehicle_position = vehicle_position.astype(np.float64)  # 確保是 float64 類型
-    #vehicle_position += movement_delta.astype(np.float64)  # 更新位置為 float64
-
-''' #用Matplotlib顯示（不是rviz)
-
-    # 計算方向向量
-    vehicle_direction = vehicle_position - previous_position
-
-    # 檢查是否為零向量，如果是，設置為默認方向
-    if np.linalg.norm(vehicle_direction) == 0:
-        vehicle_direction = np.array([0.0, 1.0])  # 預設為 X 軸方向
-    else:
-        vehicle_direction /= np.linalg.norm(vehicle_direction)  # 正規化方向
-'''
-
 def create_cone_marker(cone_position, cone_id, color):
     marker = Marker()
     marker.header.frame_id = "rslidar"
@@ -339,59 +293,6 @@ def create_path_marker(path_points):
         marker.points.append(p)
     
     return marker
-
-
-# 回調函數處理 YOLO 偵測結果
-'''def yolo_callback(data): #用Matplotlib顯示（不是rviz)
-    try:
-        global cone_sorting_input
-        global planner
-        global vehicle_position
-        global vehicle_direction
-
-        # 模擬車輛移動
-        #movement_delta = np.array([0.0, -0.1], dtype=np.float64)
-        #update_vehicle_position_and_direction(movement_delta)  # 更新位置與方向
-
-        # 確保方向不為零向量
-        if np.linalg.norm(vehicle_direction) == 0:
-            vehicle_direction = np.array([0, 1], dtype=np.float64)  # 設置為默認方向
-        
-        cones_world = np.array(list(zip(data.x, data.y)))
-        cones_2d_relative = cones_world - vehicle_position
-
-        # 圓錐分類
-        cones_by_type = {ConeTypes.UNKNOWN: [], ConeTypes.RIGHT: [], ConeTypes.LEFT: []}
-        for i, label in enumerate(data.labels):
-            cone_type = classify_cone(label)
-            cones_by_type[cone_type].append(cones_2d_relative[i])
-
-        # 將圓錐分類轉換為 numpy 數組
-        cones_by_type_array = [
-            np.array(cones_by_type[ConeTypes.UNKNOWN]) if cones_by_type[ConeTypes.UNKNOWN] else np.zeros((0, 2)),
-            np.array(cones_by_type[ConeTypes.RIGHT]) if cones_by_type[ConeTypes.RIGHT] else np.zeros((0, 2)),
-            np.array(cones_by_type[ConeTypes.LEFT]) if cones_by_type[ConeTypes.LEFT] else np.zeros((0, 2))
-        ]
-        
-        # 更新 cone_sorting_input 的數據
-        cone_sorting_input.slam_position = vehicle_position
-        cone_sorting_input.slam_direction = vehicle_direction
-        cone_sorting_input.slam_cones = cones_by_type_array
-
-        # 確認圓錐數據有效後，進行路徑計算
-        final_path = planner.calculate_path_in_global_frame(
-            cones=cones_2d_relative,
-            vehicle_position=cone_sorting_input.slam_position,
-            vehicle_direction=cone_sorting_input.slam_direction,
-            return_intermediate_results=False
-        )
-
-        # 可視化並打印圓錐的排序結果
-        plot_path(final_path, cones_2d_relative)
-
-    except Exception as e:
-        rospy.logerr(f"Error in yolo_callback: {e}")
-'''
 
 # 建立 path 和 marker 發佈器
 path_pub = rospy.Publisher("/calculated_path", Path, queue_size=10)
@@ -475,6 +376,9 @@ def yolo_callback(data):
 
         # 處理 YOLO 偵測資料
         cones_world = np.array(list(zip(data.x, data.y)))
+
+        print(f"receive :{len(cones_world)}")
+
         cones_2d_relative = cones_world - vehicle_position                               
 
         # 圓錐分類
@@ -497,6 +401,7 @@ def yolo_callback(data):
             np.array(cones_by_type[ConeTypes.RIGHT]) if cones_by_type[ConeTypes.RIGHT] else np.zeros((0, 2)),
             np.array(cones_by_type[ConeTypes.LEFT]) if cones_by_type[ConeTypes.LEFT] else np.zeros((0, 2))
         ]
+        print(f"left = {len(cones_by_type_array[ConeTypes.LEFT])},r = {len(cones_by_type_array[ConeTypes.RIGHT])}, unk = {len(cones_by_type_array[ConeTypes.UNKNOWN])}",end="!!\n")
 
         cone_sorting_input.slam_position = vehicle_position
         cone_sorting_input.slam_direction = vehicle_direction
@@ -505,7 +410,7 @@ def yolo_callback(data):
         # 計算路徑
         rospy.loginfo(f"yolo_callback_Vehicle position: {vehicle_position}")
         final_path = planner.calculate_path_in_global_frame(
-            cones=cones_2d_relative,
+            cones=cones_by_type_array,
             vehicle_position=cone_sorting_input.slam_position,
             vehicle_direction=cone_sorting_input.slam_direction,
             return_intermediate_results=False
@@ -545,7 +450,7 @@ def classify_cone(label: str) -> ConeTypes:
     elif label == "blue_cone":
         return ConeTypes.BLUE, (0.0, 0.0, 1.0)  # 藍色
     elif label == "orange_cone":
-        return ConeTypes.ORANGE, (1.0, 0.0, 0.0)  # 紅色
+        return ConeTypes.ORANGE, (1.0, 0.27, 0.0)  # orange
     else:
         return ConeTypes.UNKNOWN, (0.5, 0.5, 0.5)  # 灰色，未知顏色
     
@@ -556,7 +461,7 @@ if __name__ == '__main__':
     planner = PathPlanner(mission_type)
 
     vehicle_position = np.array([0, 0], dtype=np.float64)  # 初始車輛位置設置為 float64
-    vehicle_direction = np.array([0, 1], dtype=np.float64)  # 初始車輛方向設置為 float64
+    vehicle_direction = np.array([1, 0], dtype=np.float64)  # 初始車輛方向設置為 float64
 
     cone_sorting_input = ConeSortingInput(
         slam_cones=[],  

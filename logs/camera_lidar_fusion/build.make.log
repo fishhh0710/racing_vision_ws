@@ -1,13 +1,25 @@
-[  0%] Built target std_msgs_generate_messages_py
-[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_lisp
-[  0%] Built target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_eus
 [  0%] Built target std_msgs_generate_messages_eus
-[ 22%] Built target camera_lidar_fusion
-[ 33%] Built target camera_lidar_fusion_generate_messages_cpp
-[ 44%] Built target camera_lidar_fusion_generate_messages_nodejs
-[ 66%] Built target camera_lidar_fusion_generate_messages_py
-[ 88%] Built target camera_lidar_fusion_generate_messages_eus
-[100%] Built target camera_lidar_fusion_generate_messages_lisp
+[  4%] Built target camera_lidar_fusion
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_ConeDetections
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_Map
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_Cone
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_ControlCommand
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_CarState
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_Mission
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_LabeledPointArray
+[  4%] Built target _camera_lidar_fusion_generate_messages_check_deps_CarStateDt
+[ 95%] Built target camera_lidar_fusion_generate_messages_lisp
+[ 95%] Built target camera_lidar_fusion_generate_messages_nodejs
+[ 95%] Built target camera_lidar_fusion_generate_messages_cpp
+[100%] Built target camera_lidar_fusion_generate_messages_py
+[100%] Built target camera_lidar_fusion_generate_messages_eus
 [100%] Built target camera_lidar_fusion_generate_messages
