@@ -115,12 +115,15 @@ void cal(){
         last = pts.back();
     }
 
-    double tar_dis = ds(last);
-    double dy = abs(last.S);
+    // double tar_dis = sqrt(ds(last));
+    double tar_dis = sqrt(dis_vis);
+    double dy = last.S;
+    // double dy = dis_vis;
     double r = tar_dis*tar_dis/(2*dy);
     double k = 2*dy/(tar_dis);
-    double steer = atan(weelbase*k);
+    double steer = atan(weelbase*k/tar_dis);
     cout<<"steer:"<<steer<<"\n";
+    cout<<"pt:"<<last.F<< " "<< last.S<<"\n";
 
     visualization_msgs::Marker marker;
     marker.header.frame_id = "rslidar";
@@ -139,10 +142,24 @@ void cal(){
     geometry_msgs::Point tt;
     tt.x = tt.y = tt.z = 0.0;
     marker.points.pb(tt);
+
     tt.x = cos(steer)*10.0;
     tt.y = sin(steer)*10.0;
     marker.points.pb(tt);
 
+    // if(steer>-0.35){
+    //     steer = -0.35;
+    // }
+    // else if(steer>0.35){
+    //     steer = 0.7;
+    // }
+    steer *= 4.214;
+    steer += 2.275;
+    camera_lidar_fusion::CarState tempp;
+    tempp.car_state.y = steer;
+    tempp.car_state.x = 33;
+    tempp.car_state_dt.car_state_dt.x = 1.4;
+    pub.publish(tempp);
     temp.markers.push_back(marker);
     temp.markers.push_back(createMarker(1,last.F,last.S,1));
     test_marker_2.publish(temp);

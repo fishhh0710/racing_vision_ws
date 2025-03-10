@@ -372,7 +372,7 @@ def yolo_callback(data):
 
         # 確保方向不為零向量
         if np.linalg.norm(vehicle_direction) == 0:
-            vehicle_direction = np.array([0, 1], dtype=np.float64)  # 設置為默認方向
+            vehicle_direction = np.array([1, 0], dtype=np.float64)  # 設置為默認方向
 
         # 處理 YOLO 偵測資料
         cones_world = np.array(list(zip(data.x, data.y)))
@@ -469,7 +469,7 @@ if __name__ == '__main__':
         slam_direction=vehicle_direction
     )
 
-    # rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
-    rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
+    rospy.Subscriber("/camera_lidar_fusion/lidar_camera_pos", LabeledPointArray, yolo_callback)
+    # rospy.Subscriber("/yolo/objects/relative_coordinates", LabeledPointArray, yolo_callback)
 
     rospy.spin()
